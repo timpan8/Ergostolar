@@ -49,9 +49,11 @@ Utgå från `data/chairs.json` (`IN` = går att köpa, `UNV` = ej verifierat, `O
 - Lägg hela den uppdaterade listan som `inbox\chairs.json`.
 
 ## 3. Marknadsplatser
-**Facebook Marketplace** söker datorn själv via Apify, högst en gång per dag (jobbet `marketplace` kl. 07:00).
-- Vad som söks styr du i `C:\Users\TimLi\Dev\Automation\bestallningar\marketplace.json` (sökningar med `"projekt": "ergostolar"`).
-  Fyll på och rensa enligt `bestallningar\README.md`; starta aldrig sökningar själv.
+**Facebook Marketplace och köp/sälj-grupper**
+- Vad som söks styr du i `C:\Users\TimLi\Dev\Automation\bestallningar\marketplace.json` (sökningar med `"projekt": "ergostolar"`,
+  med `must`) och `bestallningar\fb-grupper.json`. Fyll på och rensa enligt `bestallningar\README.md`.
+- Kör dagens Chrome-plan enligt avsnittet "Marketplace och grupper i Chrome" i `bestallningar\README.md` (plan → Chrome →
+  import). Den tar bara det som inte redan körts i dag.
 - Läs resultatet: `C:\Users\TimLi\Dev\Automation\output\marketplace\senaste.json` (dagens nya annonser, prisändringar, sålda)
   och `...\archive\marketplace\annonser.json` (alla annonser med historik). Sök inte om det som redan finns där.
 - Bedöm de nya annonserna (rätt modell, stoppad hög rygg, nackstöd, pris + frakt eller hämtning i Stockholmsområdet). Öppna en
