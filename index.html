@@ -1,0 +1,744 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Ergostolar under 10 000</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: a ranked price list, like a furniture dealer's sheet — three picks on top, then the list with a schematic of each chair, then what can't be bought right now. */
+:root {
+  --bg: #f3f5f6;
+  --surface: #ffffff;
+  --ink: #17212b;
+  --muted: #5a6774;
+  --line: #d8dee3;
+  --accent: #1d5c86;
+  --accent-soft: #e2edf4;
+  --ok: #2b7a4b;
+  --ok-soft: #e1f1e7;
+  --warn: #9a6412;
+  --warn-soft: #f6ecd9;
+  --out: #7d8790;
+  --out-soft: #eceff1;
+  --f-display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161b; --surface: #182029; --ink: #e5ebef; --muted: #98a5b1; --line: #2a3540;
+    --accent: #7fb6dc; --accent-soft: #1c3142; --ok: #74c597; --ok-soft: #173326;
+    --warn: #e0b162; --warn-soft: #3a2c14; --out: #7f8a94; --out-soft: #1d252d; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11161b; --surface: #182029; --ink: #e5ebef; --muted: #98a5b1; --line: #2a3540;
+  --accent: #7fb6dc; --accent-soft: #1c3142; --ok: #74c597; --ok-soft: #173326;
+  --warn: #e0b162; --warn-soft: #3a2c14; --out: #7f8a94; --out-soft: #1d252d; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 56px;
+}
+.wrap { max-width: 1080px; margin: 0 auto; display: grid; gap: 36px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+
+header { display: grid; gap: 10px; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+h1 { font-family: var(--f-display); font-stretch: 72%; font-weight: 800; font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1; margin: 0; text-wrap: balance; letter-spacing: -.01em; }
+.lede { margin: 0; max-width: 66ch; color: var(--muted); }
+.lede strong { color: var(--ink); font-weight: 600; }
+
+h2 { font-family: var(--f-display); font-stretch: 85%; font-weight: 700; font-size: 1.35rem; margin: 0; text-wrap: balance; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+.sec-head p { margin: 0; color: var(--muted); font-size: 14px; max-width: 60ch; }
+
+/* Picks */
+.picks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.pick { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 12px; align-content: start; min-width: 0; }
+.pick > * { grid-column: 1; }
+.pick .pic, .pick .thumb { grid-column: 2; grid-row: 1 / span 3; width: 56px; height: 64px; }
+.pick .label { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--accent); }
+.pick h3 { margin: 0; font-family: var(--f-display); font-stretch: 85%; font-size: 1.2rem; font-weight: 700; line-height: 1.15; }
+.pick h3 a { color: var(--ink); text-decoration: none; }
+.pick h3 a:hover { text-decoration: underline; }
+.pick .price { font-family: var(--f-num); font-size: 1.5rem; font-weight: 600; }
+.pick p { margin: 0; color: var(--muted); font-size: 14px; grid-column: 1 / -1; }
+.pick .where { font-size: 13px; color: var(--muted); grid-column: 1 / -1; }
+
+/* Controls */
+.controls { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
+.ctl { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.seg button { font: inherit; font-size: 13px; font-weight: 500; border: 0; background: transparent; color: var(--muted); padding: 7px 12px; cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--ink); font-weight: 600; }
+.ctl-label { font-size: 12px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
+
+/* Legend */
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--muted); align-items: center; }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+.legend svg { width: 26px; height: 30px; }
+
+/* List */
+.list { display: grid; border-top: 1px solid var(--line); }
+.row {
+  display: grid; grid-template-columns: 2rem 7.6rem minmax(0, 1fr) 9.5rem 10.5rem;
+  gap: 6px 16px; align-items: start; padding: 14px 4px; border-bottom: 1px solid var(--line);
+}
+.rank { font-family: var(--f-display); font-stretch: 72%; font-weight: 800; font-size: 1.6rem; line-height: 1; color: var(--muted); padding-top: 2px; }
+.pic { width: 3.6rem; height: 4.2rem; color: var(--muted); display: block; }
+.pic .hr-yes { color: var(--accent); }
+.main { min-width: 0; display: grid; gap: 5px; }
+.name { font-weight: 600; font-size: 1.02rem; }
+.name a { color: var(--ink); text-decoration-color: var(--line); }
+.name a:hover { text-decoration-color: var(--accent); }
+.meta { display: flex; flex-wrap: wrap; gap: 5px 8px; font-size: 13px; color: var(--muted); align-items: center; }
+.why { margin: 0; font-size: 14px; color: var(--muted); max-width: 62ch; }
+.chip { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; border: 1px solid transparent; }
+.st-in { background: var(--ok-soft); color: var(--ok); }
+.st-few { background: var(--warn-soft); color: var(--warn); }
+.st-unv { background: var(--accent-soft); color: var(--accent); }
+.st-out { background: var(--out-soft); color: var(--out); }
+.n-yes { background: var(--accent); color: var(--surface); }
+.fit { background: var(--ok); color: var(--surface); }
+.h24 { background: var(--warn-soft); color: var(--warn); }
+.src { background: var(--ink); color: var(--surface); letter-spacing: .02em; }
+.like { background: var(--ok-soft); color: var(--ok); }
+.price small.np { color: var(--muted); }
+.sort-note { margin: 0; font-size: 13.5px; color: var(--accent); font-weight: 600; }
+.sort-note:empty { display: none; }
+body[data-sort="np"] .price small.np, body[data-sort="disc"] .price small.np { font-size: 13.5px; color: var(--ink); }
+body[data-sort="disc"] .price small.np b { font-size: 15px; }
+.grp { font-family: var(--f-display); font-stretch: 85%; font-weight: 700; font-size: 1.05rem; padding: 14px 4px 6px; border-bottom: 2px solid var(--ink); }
+.price small.np b { color: var(--ok); font-weight: 600; }
+.row.nope { opacity: .5; }
+.vote { display: flex; gap: 6px; justify-content: flex-end; margin-top: 6px; }
+.vote button { font: inherit; font-size: 14px; line-height: 1; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 9px; cursor: pointer; filter: grayscale(1); opacity: .7; }
+.vote button[aria-pressed="true"] { filter: none; opacity: 1; }
+.vote button.up[aria-pressed="true"] { background: var(--ok-soft); border-color: var(--ok); }
+.vote button.down[aria-pressed="true"] { background: var(--out-soft); border-color: var(--out); }
+.votes-sum { margin: 0; font-size: 14px; color: var(--ink); }
+.votes-sum:empty { display: none; }
+@media (max-width: 820px) { .vote { justify-content: flex-start; } }
+.n-opt { border-color: var(--accent); color: var(--accent); background: transparent; }
+.n-no, .n-unk { border-color: var(--line); color: var(--muted); background: transparent; font-weight: 500; }
+.tier { display: grid; gap: 6px; justify-items: start; }
+.tier .t { font-size: 13px; font-weight: 600; }
+.meter { display: flex; gap: 3px; align-items: flex-end; height: 16px; }
+.meter i { display: block; width: 7px; border-radius: 2px; background: var(--line); }
+.meter i:nth-child(1) { height: 6px; } .meter i:nth-child(2) { height: 8px; } .meter i:nth-child(3) { height: 10px; } .meter i:nth-child(4) { height: 13px; } .meter i:nth-child(5) { height: 16px; }
+.meter i.on { background: var(--accent); }
+.meter-cap { font-size: 12px; color: var(--muted); }
+.price { text-align: right; display: grid; gap: 2px; }
+.price strong { font-family: var(--f-num); font-size: 1.2rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.price small { font-size: 12px; color: var(--muted); }
+.row.dim .name a, .row.dim .price strong { color: var(--muted); }
+.row.dim .rank { color: var(--line); }
+.row.dim .pic { opacity: .55; }
+.empty { padding: 16px 4px; color: var(--muted); border-bottom: 1px solid var(--line); }
+.web-note { margin: 0; padding: 10px 4px; font-size: 13px; color: var(--muted); }
+.web-note:empty { display: none; }
+
+/* Add finds (filled by Claude in Chrome) */
+.add { display: grid; gap: 12px; padding: 4px 4px 20px; }
+.add p { margin: 0; color: var(--muted); font-size: 14px; max-width: 72ch; }
+.add h3 { margin: 8px 0 0; font-family: var(--f-display); font-stretch: 85%; font-size: 1.05rem; font-weight: 700; }
+.add textarea { width: 100%; min-height: 9rem; font: 13px/1.45 var(--f-num); background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 10px; resize: vertical; }
+.add textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.add-row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.btn { font: inherit; font-size: 14px; font-weight: 600; border: 1px solid var(--accent); background: var(--accent); color: var(--surface); border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--accent); }
+.btn:disabled { opacity: .5; cursor: default; }
+.add .status { font-size: 13px; }
+.picwrap { display: grid; gap: 4px; justify-items: start; align-content: start; }
+.pics { display: flex; gap: 5px; align-items: flex-start; }
+.thumb { display: block; width: 3.6rem; height: 4.2rem; padding: 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface); cursor: zoom-in; }
+.thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.thumb-link { display: grid; place-items: center; text-align: center; font-size: 12px; font-weight: 600; line-height: 1.2; color: var(--accent); text-decoration: none; cursor: pointer; background: var(--accent-soft); }
+.addimg { position: relative; font-size: 11.5px; font-weight: 600; color: var(--accent); cursor: pointer; white-space: nowrap; }
+.addimg input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.addimg:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.row.drop { outline: 2px dashed var(--accent); outline-offset: -2px; border-radius: 6px; }
+dialog.photo { border: 0; padding: 0; background: transparent; max-width: min(92vw, 1100px); }
+dialog.photo::backdrop { background: rgba(10, 14, 18, .78); }
+dialog.photo img { display: block; max-width: 100%; max-height: 80vh; border-radius: 8px; background: var(--surface); }
+dialog.photo .btn { margin-top: 10px; }
+.ins { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: 12.5px/1.55 var(--f-num); background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; max-height: 24rem; overflow: auto; }
+
+details.group { border-top: 1px solid var(--line); }
+details.group > summary { cursor: pointer; padding: 14px 4px; list-style: none; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; align-items: baseline; }
+details.group > summary::-webkit-details-marker { display: none; }
+details.group > summary h2 { font-size: 1.15rem; }
+details.group > summary span { font-size: 13px; color: var(--muted); }
+details.group > summary::after { content: "Visa"; font-size: 13px; color: var(--accent); font-weight: 600; }
+details.group[open] > summary::after { content: "Dölj"; }
+
+/* Notes + stores */
+.notes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.notes ul { margin: 8px 0 0; padding-left: 1.1rem; display: grid; gap: 6px; color: var(--muted); font-size: 14px; }
+.notes li strong { color: var(--ink); font-weight: 600; }
+.stores { display: grid; gap: 10px; margin-top: 8px; }
+.store { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 2px 12px; font-size: 14px; }
+.store b { font-weight: 600; }
+.store span { color: var(--muted); }
+footer { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; }
+
+@media (max-width: 820px) {
+  .picks { grid-template-columns: minmax(0, 1fr); }
+  .notes { grid-template-columns: minmax(0, 1fr); }
+  .row { grid-template-columns: 1.6rem 6.8rem minmax(0, 1fr); }
+  .pic, .thumb { width: 3.2rem; height: 3.8rem; }
+  .tier, .price { grid-column: 2 / -1; }
+  .tier { grid-auto-flow: column; justify-content: start; align-items: center; gap: 10px; }
+  .price { text-align: left; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .row { transition: background-color .15s; }
+  .row:hover { background: var(--surface); }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow" id="eyebrow">Laddar …</div>
+    <h1>Ergostolar under 10 000</h1>
+    <p class="lede">Arbetsstolar byggda för hela arbetsdagar, rangordnade efter vad du får för pengarna. <strong>Alla priser är inklusive moms.</strong> Rekomo, RP och Rafz visar priser exklusive moms; här är 25 % pålagt så att allt går att jämföra. Skisserna visar stoltypen, inte den exakta stolen. Klicka på namnet för butikens foton. <strong>Passar dig</strong> betyder stoppad, hög rygg och nackstöd (monterat eller som tillval), anpassat för 170–185 cm.</p>
+  </header>
+
+  <section aria-labelledby="picks-h" style="display:grid;gap:14px">
+    <h2 id="picks-h">Tre bästa köpen just nu</h2>
+    <div class="picks" id="picks"></div>
+  </section>
+
+  <section aria-labelledby="list-h" style="display:grid;gap:14px">
+    <div class="sec-head">
+      <h2 id="list-h">Går att köpa nu</h2>
+      <p>Lager kollat direkt på butikernas sidor i dag. Staplarna visar prisvärdhet för långa arbetsdagar: kvalitet, justerbarhet och pris mot nypris.</p>
+    </div>
+    <div class="controls">
+      <div class="ctl">
+        <span class="ctl-label" id="sort-l">Sortera</span>
+        <div class="seg" role="group" aria-labelledby="sort-l">
+          <button type="button" id="sort-value" aria-pressed="true">Prisvärdhet</button>
+          <button type="button" id="sort-price" aria-pressed="false">Lägst pris</button>
+          <button type="button" id="sort-np" aria-pressed="false">Högst nypris</button>
+          <button type="button" id="sort-disc" aria-pressed="false">Mest sänkt</button>
+          <button type="button" id="sort-prem" aria-pressed="false">Premiumnivå</button>
+        </div>
+      </div>
+      <div class="ctl">
+        <span class="ctl-label" id="filt-l">Visa</span>
+        <div class="seg" role="group" aria-labelledby="filt-l">
+          <button type="button" id="f-all" aria-pressed="false">Alla</button>
+          <button type="button" id="f-fit" aria-pressed="true">Passar dig</button>
+          <button type="button" id="f-neck" aria-pressed="false">Med nackstöd</button>
+          <button type="button" id="f-prem" aria-pressed="false">Premium</button>
+          <button type="button" id="f-cheap" aria-pressed="false">Under 7 000</button>
+          <button type="button" id="f-24" aria-pressed="false">24/7</button>
+          <button type="button" id="f-like" aria-pressed="false">Gillade</button>
+        </div>
+      </div>
+      <div class="ctl">
+        <span class="ctl-label" id="brand-l">Tillverkare</span>
+        <div class="seg" role="group" aria-labelledby="brand-l" id="brands"></div>
+      </div>
+    </div>
+    <div class="legend" id="legend"></div>
+    <p class="votes-sum" id="votes-sum"></p>
+    <p class="sort-note" id="sort-note" role="status"></p>
+    <div class="list" id="list-in"></div>
+  </section>
+
+  <details class="group" open>
+    <summary><h2>Hittat på marknadsplatser, ej verifierat</h2><span>Kolla säljare, storlek och moms själv</span></summary>
+    <div class="list" id="list-unv"></div>
+    <p class="web-note" id="img-status" role="status"></p>
+    <p class="web-note" id="web-note"></p>
+  </details>
+
+  <details class="group">
+    <summary><h2>Slutsålt just nu</h2><span>Bra stolar som var slut i dag, värda att bevaka</span></summary>
+    <div class="list" id="list-out"></div>
+  </details>
+
+  <details class="group" id="add-panel">
+    <summary><h2>Spara dina 👍/👎</h2><span>GitHub-nyckel, en gång per enhet</span></summary>
+    <div class="add">
+      <p>Dina omdömen sparas i repot <a href="https://github.com/timpan8/Ergostolar" target="_blank" rel="noopener">timpan8/Ergostolar</a>, så att datorn och Claude ser dem. Klistra in en GitHub-nyckel (fine-grained token) som bara har <b>Contents: Read and write</b> på det repot. Den sparas bara i den här webbläsaren.</p>
+      <div class="add-row"><input id="gh-token" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…" aria-label="GitHub-nyckel" style="flex:1;min-width:14rem;font:13px var(--f-num);padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)"><button type="button" class="btn" id="gh-save">Spara nyckel</button><button type="button" class="btn ghost" id="gh-forget">Glöm nyckeln</button></div>
+      <p class="status" id="add-status" role="status"></p>
+      <p>Fynd från Blocket, Tradera och Marketplace läggs in automatiskt av datorn och Claude-uppgiften.</p>
+    </div>
+  </details>
+
+  <dialog class="photo" id="photo"><img id="photo-img" alt=""><button type="button" class="btn" id="photo-close">Stäng</button></dialog>
+
+  <section class="notes">
+    <div>
+      <h2>Innan du köper</h2>
+      <ul>
+        <li><strong>Gaskolven:</strong> sätt dig tungt och sitt still en minut. Sitsen får inte sjunka.</li>
+        <li><strong>Svankpumpen (Logic 400):</strong> pumpa upp och vänta några minuter. Tappar kudden luft läcker den.</li>
+        <li><strong>Sittdjupet:</strong> sitsen ska gå att dra fram och tillbaka jämnt och låsa i alla lägen.</li>
+        <li><strong>Stoppningen:</strong> känn på sitsens framkant. Nedsutten skumplast går inte att rädda, även om klädseln är ny.</li>
+        <li><strong>Nackstöd i efterhand:</strong> till RH Logic 1 130 kr hos Rekomo, till Kinnarps 1 244 kr hos BBS.</li>
+        <li><strong>Garantin skiljer sig.</strong> Rekomo, RP och Rafz ger 3 år, BBS 6 månader.</li>
+        <li><strong>Blocket:</strong> bevaka "Logic 400 nackstöd", "Kinnarps 8000 plus", "Kinnarps plus nackstöd" och "Savo XO" i Stockholms län.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Butiker</h2>
+      <div class="stores">
+        <div class="store"><b>RP</b><span>Showroom i Stockholm · <span class="num">08-645 27 77</span></span></div>
+        <div class="store"><b>Rekomo</b><span>Butik i Stockholm · <span class="num">08-518 170 20</span> · 30 dagars öppet köp online</span></div>
+        <div class="store"><b>BBS Möbler</b><span>Fridenborgsvägen 57, Solna · <span class="num">08-85 92 00</span> · lör 12–15</span></div>
+        <div class="store"><b>Rafz</b><span>Stora Benhamra, Brottby · <span class="num">08-800 100</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer"></footer>
+</div>
+
+<script>
+(function () {
+  // state: in = flera i lager, few = 1–2 kvar, unv = ej verifierat, out = slut
+  // back: mesh | pad | saddle · tall: true = hög rygg · neck: yes | opt | no | unk
+  var IN = [], UNV = [], OUT = [], PICKS = [], PICKSPEC = [];
+  function find(name, store) { return IN.filter(function (x) { return x.name === name && x.store.indexOf(store) === 0; })[0]; }
+
+  var NECK = { yes: ["n-yes", "Nackstöd"], opt: ["n-opt", "Nackstöd som tillval"], no: ["n-no", "Inget nackstöd"], unk: ["n-unk", "Nackstöd ej angivet"] };
+  var stClass = { in: "st-in", few: "st-few", unv: "st-unv", out: "st-out" };
+  var sortBy = "value", filter = "fit";
+  var fmt = function (n) { return n.toLocaleString("sv-SE").replace(/ /g, " ") + " kr"; };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+
+  // Schematic chair: back type, back height, headrest. Not a picture of the real model.
+  function chair(it, label) {
+    var s = '<svg class="pic" viewBox="0 0 48 56" role="img" aria-label="' + esc(label || "") + '" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">';
+    // base
+    s += '<path d="M24 42v7M12 51l12-2 12 2M24 49v3"/><circle cx="12" cy="52" r="1.6" fill="currentColor" stroke="none"/><circle cx="36" cy="52" r="1.6" fill="currentColor" stroke="none"/><circle cx="24" cy="53.5" r="1.6" fill="currentColor" stroke="none"/>';
+    if (it.back === "saddle") {
+      s += '<path d="M12 37c4-4 20-4 24 0-2 3-6 4-12 4s-10-1-12-4z" fill="currentColor" fill-opacity=".85"/>';
+      s += '<rect x="17" y="21" width="14" height="9" rx="3" fill="currentColor" fill-opacity=".85"/><path d="M24 30v6"/>';
+      return s + "</svg>";
+    }
+    var top = it.tall ? 10 : 17, h = 34 - top;
+    // armrests
+    s += '<path d="M10 34v-7h5M38 34v-7h-5"/>';
+    // seat
+    s += '<rect x="10" y="34" width="28" height="6" rx="2.5" fill="currentColor" fill-opacity="' + (it.back === "mesh" ? ".35" : ".85") + '"/>';
+    // back
+    if (it.back === "mesh") {
+      s += '<rect x="14" y="' + top + '" width="20" height="' + h + '" rx="5"/>';
+      for (var x = 18; x <= 30; x += 4) s += '<path d="M' + x + " " + (top + 3) + "V" + (top + h - 3) + '" stroke-width=".9" opacity=".7"/>';
+    } else {
+      s += '<rect x="14" y="' + top + '" width="20" height="' + h + '" rx="5" fill="currentColor" fill-opacity=".85"/>';
+    }
+    // headrest
+    if (it.neck === "yes") {
+      s += '<g class="hr-yes"><rect x="16" y="' + (top - 8) + '" width="16" height="5.5" rx="2.7" fill="currentColor" stroke="currentColor"/><path d="M24 ' + (top - 2.5) + "V" + top + '" stroke="currentColor"/></g>';
+    } else if (it.neck === "opt") {
+      s += '<g class="hr-yes"><rect x="16" y="' + (top - 8) + '" width="16" height="5.5" rx="2.7" stroke="currentColor" stroke-dasharray="2 2"/></g>';
+    }
+    return s + "</svg>";
+  }
+  function picLabel(it) {
+    var b = it.back === "mesh" ? "Mesh-rygg" : it.back === "saddle" ? "Sadelsits" : "Stoppad rygg";
+    return b + (it.back !== "saddle" ? (it.tall ? ", hög rygg" : ", låg rygg") : "") + ", " + NECK[it.neck][1].toLowerCase();
+  }
+  function meter(v) {
+    var h = '<span class="meter" aria-hidden="true">';
+    for (var i = 1; i <= 5; i++) h += '<i class="' + (i <= v ? "on" : "") + '"></i>';
+    return h + "</span>";
+  }
+  function neckChip(it) {
+    var n = NECK[it.neck];
+    return '<span class="chip ' + n[0] + '">' + n[1] + (it.neckNote ? " " + esc(it.neckNote) : "") + "</span>";
+  }
+  function row(it, i, dim) {
+    return '<article class="row' + (dim ? " dim" : "") + (VOTE[mkey(it)] === -1 ? " nope" : "") + '"' + (it._key ? ' data-key="' + esc(it._key) + '"' : "") + ">" +
+      '<div class="rank num">' + (i + 1) + "</div>" +
+      pic(it) +
+      '<div class="main"><div class="name"><a href="' + esc(it.url) + '" target="_blank" rel="noopener">' + esc(it.name) + "</a></div>" +
+      '<div class="meta"><span class="chip src">' + esc(site(it.url)) + "</span>" + (VOTE[mkey(it)] === 1 ? '<span class="chip like">Du gillar modellen</span>' : "") + (fits(it) ? '<span class="chip fit">Passar dig</span>' : "") + (it.h24 ? '<span class="chip h24">24/7</span>' : "") + neckChip(it) + '<span class="chip ' + stClass[it.state] + '">' + esc(it.stock) + "</span><span>" + esc(it.store) + "</span></div>" +
+      (it.why ? '<p class="why">' + esc(it.why) + "</p>" : "") + "</div>" +
+      '<div class="tier"><span class="t">' + esc(it.tier) + "</span>" + meter(it.value) + '<span class="meter-cap">Prisvärdhet ' + it.value + "/5</span></div>" +
+      '<div class="price"><strong>' + (it.approx ? "ca " : "") + fmt(it.price) + "</strong><small>" + esc(it.note) + "</small>" + npLine(it) + voteBtns(it) + "</div>" +
+      "</article>";
+  }
+  var SITES = { "blocket.se": "Blocket", "facebook.com": "Facebook", "tradera.com": "Tradera", "cdon.se": "CDON", "rekomo.se": "Rekomo", "bbsmobler.se": "BBS Möbler", "rp.se": "RP", "rafz.se": "Rafz", "cirkularfabriken.se": "Cirkulärfabriken", "offeco.nl": "Offeco", "relovie.com": "Relovie" };
+  function site(u) {
+    var h = (String(u).match(/^https?:\/\/([^\/?#]+)/i) || [])[1] || "";
+    h = h.toLowerCase().replace(/^www\./, "");
+    for (var d in SITES) if (h === d || h.slice(-d.length - 1) === "." + d) return SITES[d];
+    return h || "Okänd sida";
+  }
+  // Likes and dislikes are per model (db collection "votes", one doc per model).
+  var VOTE = {}, VLABEL = {};
+  var MODELS = [[/logic\s*400\s*elite/i, "RH Logic 400 Elite"], [/logic\s*(400|4\b)/i, "RH Logic 400"], [/logic\s*220/i, "RH Logic 220"], [/mereo/i, "RH Mereo"], [/extend/i, "RH Extend"], [/kinnarps.*9000/i, "Kinnarps 9000"], [/kinnarps.*plus|8000\s*plus/i, "Kinnarps Plus"], [/kinnarps/i, "Kinnarps 6000/8000"], [/savo|\bxo\b/i, "Savo XO"], [/h09/i, "HÅG H09"], [/capisco/i, "HÅG Capisco"], [/malmstol/i, "Malmstolen"], [/leap/i, "Steelcase Leap"], [/gesture/i, "Steelcase Gesture"], [/think/i, "Steelcase Think"], [/aeron/i, "Herman Miller Aeron"], [/mirra/i, "Herman Miller Mirra"], [/sayl/i, "Herman Miller Sayl"], [/stolcomfort|\bkab\b/i, "KAB StolComfort"]];
+  function model(it) { for (var i = 0; i < MODELS.length; i++) if (MODELS[i][0].test(it.name)) return MODELS[i][1]; return it.name; }
+  function mkey(it) { return model(it).toLowerCase().replace(/å|ä/g, "a").replace(/ö/g, "o").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60) || "okand"; }
+  // New price: the row's own newPrice, else "nypris N" in its note, else a typical new price for the model (BBS, Rekomo, RP).
+  var NP = [[/logic\s*400\s*elite/i, 21250], [/logic\s*(400|4\b)/i, 20000], [/extend\s*220/i, 17100], [/mereo\s*220/i, 15000], [/kinnarps.*9000/i, 12500], [/kinnarps.*plus|8000\s*plus/i, 13750], [/kinnarps/i, 12500], [/aeron/i, 18100], [/malmstol.*4000/i, 14300]];
+  function newPrice(it) {
+    if (typeof it.newPrice === "number" && it.newPrice > 0) return { v: it.newPrice, typ: false };
+    var m = /nypris\s*(?:från\s*)?(?:ca\s*)?(\d{1,3}(?:[\s ]\d{3})+|\d{4,6})/i.exec(it.note || "");
+    if (m) return { v: +m[1].replace(/\D/g, ""), typ: false };
+    for (var i = 0; i < NP.length; i++) if (NP[i][0].test(it.name)) return { v: NP[i][1], typ: true };
+    return null;
+  }
+  function npLine(it) {
+    var n = newPrice(it);
+    if (!n || !(n.v > it.price)) return "";
+    var pct = Math.round((1 - it.price / n.v) * 100);
+    return '<small class="np">' + (n.typ ? "Nypris ca " : "Nypris ") + fmt(n.v) + ' · <b>' + pct + " % billigare</b></small>";
+  }
+  // Premium level within each manufacturer (higher = more premium). Used by the "Premiumnivå" sort.
+  var PREM = [[/logic\s*400\s*elite/i, 100], [/stolcomfort|\bkab\b/i, 98], [/mereo\s*300/i, 95], [/logic\s*(400|4\b)/i, 90], [/mereo/i, 85], [/extend\s*220/i, 80], [/logic\s*220/i, 70], [/extend/i, 65], [/kinnarps.*9000/i, 90], [/kinnarps.*plus|8000\s*plus/i, 85], [/kinnarps/i, 70], [/aeron/i, 95], [/mirra/i, 85], [/sayl/i, 70], [/leap/i, 95], [/gesture/i, 92], [/think/i, 70], [/h09/i, 90], [/capisco/i, 80], [/h05/i, 70], [/\bxo\b/i, 85], [/maxikon/i, 80], [/soul/i, 70], [/malmstol.*4000/i, 85], [/malmstol/i, 70]];
+  function prem(it) { for (var i = 0; i < PREM.length; i++) if (PREM[i][0].test(it.name)) return PREM[i][1]; return 50; }
+  function disc(it) { var n = newPrice(it); return n && n.v > it.price ? 1 - it.price / n.v : -1; }
+  var SORTS = {
+    price: function (a, b) { return a.price - b.price; },
+    np: function (a, b) { var x = newPrice(a), y = newPrice(b); return (y ? y.v : 0) - (x ? x.v : 0) || a.price - b.price; },
+    disc: function (a, b) { return disc(b) - disc(a) || a.price - b.price; },
+    prem: function (a, b) { return (brandOrder.indexOf(brand(a)) - brandOrder.indexOf(brand(b))) || (prem(b) - prem(a)) || a.price - b.price; }
+  };
+  function voteBtns(it) {
+    if (!fdb) return "";
+    var k = mkey(it), m = model(it), v = VOTE[k];
+    return '<div class="vote"><button type="button" class="up" data-vote="1" data-model="' + esc(k) + '" data-label="' + esc(m) + '" aria-pressed="' + (v === 1) + '" aria-label="Gilla modellen ' + esc(m) + '">👍</button><button type="button" class="down" data-vote="-1" data-model="' + esc(k) + '" data-label="' + esc(m) + '" aria-pressed="' + (v === -1) + '" aria-label="Ogilla modellen ' + esc(m) + '">👎</button></div>';
+  }
+  function renderVotes() {
+    var up = [], down = [];
+    for (var k in VOTE) (VOTE[k] === 1 ? up : down).push(VLABEL[k] || k);
+    document.getElementById("votes-sum").textContent = (up.length ? "Du gillar: " + up.join(", ") + "." : "") + (down.length ? (up.length ? " " : "") + "Du ogillar: " + down.join(", ") + "." : "");
+  }
+  // Manufacturer filter, combined with the other filter. Buttons are built from the chairs on the page.
+  var BRANDS = [[/\bRH\b|logic|mereo|extend/i, "RH"], [/kinnarps/i, "Kinnarps"], [/herman|aeron|mirra|sayl/i, "Herman Miller"], [/steelcase|leap|gesture|think/i, "Steelcase"], [/h[åa]g\b|capisco|h0[59]/i, "HÅG"], [/savo|\bxo\b/i, "Savo"], [/malmstol/i, "Malmstolen"], [/stolcomfort|\bkab\b/i, "KAB"]];
+  var brandF = "", brandKey = "", brandOrder = [];
+  function brand(it) { for (var i = 0; i < BRANDS.length; i++) if (BRANDS[i][0].test(it.name)) return BRANDS[i][1]; return "Övriga"; }
+  function renderBrands() {
+    var n = {};
+    IN.concat(UNV, OUT, WEB).forEach(function (x) { var b = brand(x); n[b] = (n[b] || 0) + 1; });
+    var list = Object.keys(n).sort(function (a, b) { return a === "Övriga" ? 1 : b === "Övriga" ? -1 : n[b] - n[a]; });
+    brandOrder = list;
+    if (brandF && !n[brandF]) brandF = "";
+    var key = list.map(function (b) { return b + n[b]; }).join("|") + "#" + brandF;
+    if (key === brandKey) return;
+    brandKey = key;
+    document.getElementById("brands").innerHTML = '<button type="button" data-brand="" aria-pressed="' + (brandF === "") + '">Alla</button>' +
+      list.map(function (b) { return '<button type="button" data-brand="' + esc(b) + '" aria-pressed="' + (brandF === b) + '">' + esc(b) + " " + n[b] + "</button>"; }).join("");
+  }
+  document.getElementById("brands").addEventListener("click", function (e) {
+    var b = e.target && e.target.closest ? e.target.closest("button[data-brand]") : null;
+    if (!b) return;
+    brandF = b.getAttribute("data-brand"); render();
+  });
+  function fits(x) { return x.back === "pad" && x.tall !== false && (x.neck === "yes" || x.neck === "opt"); }
+  function pass(x) {
+    if (brandF && brand(x) !== brandF) return false;
+    if (filter === "fit") return fits(x);
+    if (filter === "neck") return x.neck === "yes" || x.neck === "opt";
+    if (filter === "prem") return x.tier === "Premium";
+    if (filter === "cheap") return x.price < 7000;
+    if (filter === "h24") return x.h24 === true;
+    if (filter === "like") return VOTE[mkey(x)] === 1;
+    return true;
+  }
+  function fill(id, arr, dim, sort) {
+    var list = arr.filter(pass);
+    if (sortBy !== "value") list.sort(SORTS[sortBy]);
+    if (filter === "neck") list.sort(function (a, b) { return (a.neck === "yes" ? 0 : 1) - (b.neck === "yes" ? 0 : 1); });
+    if (filter === "neck" && sortBy !== "value") list.sort(SORTS[sortBy]);
+    var last = null;
+    document.getElementById(id).innerHTML = list.length ? list.map(function (x, i) {
+      var head = "";
+      if (sortBy === "prem" && brand(x) !== last) { last = brand(x); head = '<div class="grp">' + esc(last) + "</div>"; }
+      return head + row(x, i, dim);
+    }).join("") : '<div class="empty">Inga stolar här matchar filtret.</div>';
+  }
+  // Finds saved by Claude in Chrome live in the page's database (collection "finds").
+  // A find replaces a static UNV row with the same link; links already in IN/OUT win over finds.
+  function render() {
+    renderBrands();
+    var known = {}, fresh = {};
+    IN.concat(OUT).forEach(function (x) { known[cleanUrl(x.url)] = 1; });
+    var web = WEB.filter(function (x) { return !known[cleanUrl(x.url)]; });
+    web.forEach(function (x) { fresh[cleanUrl(x.url)] = 1; });
+    var unv = UNV.filter(function (x) { return !fresh[cleanUrl(x.url)]; });
+    // Any sort other than the default merges everything buyable into one list, so the order is global.
+    var buy = unv.concat(web.filter(function (x) { return x.state !== "out"; })), merged = sortBy !== "value";
+    document.getElementById("list-unv").closest("details").hidden = merged;
+    fill("list-in", merged ? IN.concat(buy) : IN, false, true);
+    fill("list-unv", merged ? [] : buy, false, false);
+    fill("list-out", OUT.concat(web.filter(function (x) { return x.state === "out"; })), true, false);
+  }
+  function renderPicks() {
+    document.getElementById("picks").innerHTML = PICKS.map(function (p) {
+      var it = p.item, pimg = photoOf(it);
+      var slot = pimg ? '<button type="button" class="thumb" data-src="img/' + esc(pimg) + '.jpg" aria-label="Visa foto: ' + esc(it.name) + '"><img src="img/' + esc(pimg) + '.jpg" alt="" loading="lazy"></button>' : chair(it, picLabel(it));
+      return '<article class="pick"><div class="label">' + esc(p.label) + "</div>" + slot +
+        '<h3><a href="' + esc(it.url) + '" target="_blank" rel="noopener">' + esc(it.name) + "</a></h3>" +
+        '<div class="price">' + (p.price ? "ca " + fmt(p.price) : fmt(it.price)) + "</div>" + (p.priceNote ? '<div class="where">' + esc(p.priceNote) + "</div>" : "") + "<p>" + esc(p.text) + '</p><div class="where">' + esc(p.where) + "</div></article>";
+    }).join("");
+    var L = [
+      [{ back: "pad", tall: true, neck: "yes" }, "Nackstöd monterat"],
+      [{ back: "pad", tall: true, neck: "opt" }, "Nackstöd kan köpas till"],
+      [{ back: "mesh", tall: true, neck: "no" }, "Mesh-rygg"],
+      [{ back: "pad", tall: false, neck: "no" }, "Låg stoppad rygg"],
+      [{ back: "saddle", neck: "no" }, "Sadelstol"]
+    ];
+    document.getElementById("legend").innerHTML = L.map(function (l) { return "<span>" + chair(l[0], l[1]) + esc(l[1]) + "</span>"; }).join("");
+  }
+  function press(ids, active) { ids.forEach(function (id) { document.getElementById(id).setAttribute("aria-pressed", id === active ? "true" : "false"); }); }
+  // Sort buttons (all lists).
+  var S = [["sort-value", "value"], ["sort-price", "price"], ["sort-np", "np"], ["sort-disc", "disc"], ["sort-prem", "prem"]];
+  S.forEach(function (p) {
+    document.getElementById(p[0]).addEventListener("click", function () { sortBy = p[1]; press(S.map(function (s) { return s[0]; }), p[0]); sortNote(); render(); });
+  });
+  var SNOTE = { value: "", price: "Sorterat på lägst pris först.", np: "Sorterat på högst nypris först. Stolar utan känt nypris ligger sist.", disc: "Sorterat på störst rabatt mot nypris först. Stolar utan känt nypris ligger sist.", prem: "Grupperat per tillverkare, toppmodell först inom varje tillverkare." };
+  function sortNote() { document.getElementById("sort-note").textContent = SNOTE[sortBy] ? SNOTE[sortBy] + " Fynden från marknadsplatser ligger i samma lista." : ""; document.body.setAttribute("data-sort", sortBy); }
+  var F = [["f-all", "all"], ["f-fit", "fit"], ["f-neck", "neck"], ["f-prem", "prem"], ["f-cheap", "cheap"], ["f-24", "h24"], ["f-like", "like"]];
+  F.forEach(function (p) {
+    document.getElementById(p[0]).addEventListener("click", function () { filter = p[1]; press(F.map(function (f) { return f[0]; }), p[0]); render(); });
+  });
+  var WEB = [];
+  var ST = { in: 1, few: 1, unv: 1, out: 1 }, BK = { pad: 1, mesh: 1, saddle: 1 }, NK = { yes: 1, opt: 1, no: 1, unk: 1 }, TI = { "Premium": 1, "Mycket bra": 1, "Bra": 1, "Specialfall": 1 };
+  function cleanUrl(u) { return String(u || "").trim().replace(/#.*$/, "").replace(/\/+$/, ""); }
+  function keyOf(u) { var h = 2166136261; for (var i = 0; i < u.length; i++) { h ^= u.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; } return "f" + h.toString(16); }
+  function str(v, max) { return typeof v === "string" ? v.trim().slice(0, max) : ""; }
+  function day(s) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || ""); return m ? new Date(+m[1], +m[2] - 1, +m[3]).toLocaleDateString("sv-SE", { day: "numeric", month: "short" }) : ""; }
+  // Validate one find: a clean record to store, or a reason it was skipped.
+  function clean(r) {
+    if (!r || typeof r !== "object" || Array.isArray(r)) return "inte ett objekt";
+    var url = cleanUrl(r.url);
+    if (!/^https:\/\/\S+$/i.test(url)) return "url saknas eller börjar inte med https://";
+    var name = str(r.name, 120); if (!name) return "name saknas";
+    var price = Math.round(Number(r.price)); if (!(price > 0 && price < 100000)) return "price saknas";
+    if (!BK[r.back]) return "back måste vara pad, mesh eller saddle";
+    var v = Math.round(Number(r.value));
+    return {
+      name: name, url: url, store: str(r.store, 80) || "Okänd säljare", stock: str(r.stock, 60) || "Ej verifierat",
+      state: ST[r.state] ? r.state : "unv", tier: TI[r.tier] ? r.tier : "Bra", value: v >= 1 && v <= 5 ? v : 3,
+      price: price, approx: r.approx === true, note: str(r.note, 160), back: r.back, tall: r.tall !== false,
+      neck: NK[r.neck] ? r.neck : "unk", neckNote: str(r.neckNote, 30), why: str(r.why, 300),
+      checked: /^\d{4}-\d{2}-\d{2}$/.test(r.checked) ? r.checked : new Date().toISOString().slice(0, 10),
+      photoUrl: /^https:\/\/\S+$/i.test(str(r.photoUrl, 500)) ? str(r.photoUrl, 500) : "",
+      h24: r.h24 === true,
+      newPrice: Number(r.newPrice) > 0 && Number(r.newPrice) < 200000 ? Math.round(Number(r.newPrice)) : 0,
+      thumb: typeof r.thumb === "string" && r.thumb.length < 90000 && /^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+\/=]+$/.test(r.thumb) ? r.thumb : ""
+    };
+  }
+  function fromDb(d, key) {
+    var c = clean(d); if (typeof c === "string") return null;
+    var it = Object.assign({}, c), when = day(c.checked);
+    it.store = c.store + " · via webbläsaren" + (when ? " " + when : "");
+    it._key = key;
+    if (typeof d.img === "string" && /^[A-Za-z0-9_-]{16,64}$/.test(d.img)) it.img = d.img;
+    return it;
+  }
+  // Photo slot: uploaded photo (click to enlarge) or the schematic; finds get an upload field.
+  // PHOTOS: store photos for the fixed rows (IN/UNV/OUT), kept in the "photos" collection as {url, img}.
+  var IMG = {}, THUMB = {}, PHOTOS = {}, assetsNs = null;
+  function photoOf(it) { return it.img || (!it._key && PHOTOS[cleanUrl(it.url)]) || ""; }
+  function pic(it) {
+    var pimg = photoOf(it), src = pimg ? "img/" + pimg + ".jpg" : "";
+    var inner = src ? '<button type="button" class="thumb" data-src="' + esc(src) + '" data-href="' + esc(it.photoUrl || src) + '" aria-label="Visa foto: ' + esc(it.name) + '"><img src="' + esc(src) + '" alt="" loading="lazy" referrerpolicy="no-referrer"></button>' :
+      it.thumb ? (it.photoUrl ? '<a class="thumb" href="' + esc(it.photoUrl) + '" target="_blank" rel="noopener" aria-label="Visa foto av ' + esc(it.name) + ' i ny flik">' : '<span class="thumb">') + '<img src="' + it.thumb + '" alt="">' + (it.photoUrl ? "</a>" : "</span>") :
+      "";
+    inner = '<div class="pics">' + chair(it, picLabel(it)) + inner + "</div>";
+    if (!it._key) return inner;
+    var link = !it.img && !it.thumb && it.photoUrl ? '<a class="addimg" href="' + esc(it.photoUrl) + '" target="_blank" rel="noopener" aria-label="Visa foto av ' + esc(it.name) + ' i ny flik">Foto ↗</a>' : "";
+    return '<div class="picwrap">' + inner + link + (assetsNs ? '<label class="addimg">' + (it.img ? "Byt bild" : "+ Bild") + '<input type="file" accept="image/png,image/jpeg,image/webp" data-key="' + esc(it._key) + '" aria-label="' + (it.img ? "Byt bild för " : "Lägg till bild för ") + esc(it.name) + '"></label>' : "") + "</div>";
+  }
+  function parseFinds(t) {
+    t = t.trim(); if (!t) return [];
+    try { var v = JSON.parse(t); return Array.isArray(v) ? v : [v]; }
+    catch (e) { return t.split(/\r?\n/).map(function (l) { return l.trim().replace(/,$/, ""); }).filter(Boolean).map(function (l) { return JSON.parse(l); }); }
+  }
+  var addTa = document.createElement("textarea"), addBtn = document.createElement("button"), addSt = document.getElementById("add-status"), webNote = document.getElementById("web-note");
+  var fdb = null;
+  async function saveFinds() {
+    if (!fdb) return;
+    var rows;
+    try { rows = parseFinds(addTa.value); } catch (e) { addSt.textContent = "Kunde inte läsa texten som JSON. Kontrollera citattecken och kommatecken."; return; }
+    if (!rows.length) { addSt.textContent = "Rutan är tom."; return; }
+    addBtn.disabled = true; addSt.textContent = "Sparar …";
+    var saved = 0, removed = 0, skipped = [], failed = "";
+    for (var i = 0; i < rows.length && !failed; i++) {
+      var r = rows[i], url = r && typeof r === "object" ? cleanUrl(r.url) : "";
+      try {
+        if (r && r.remove === true && /^https:\/\//i.test(url)) {
+          var rk = keyOf(url), oldImg = IMG[rk];
+          await fdb.collection("finds").doc(rk).delete();
+          if (oldImg && assetsNs) { try { await assetsNs.delete(oldImg); } catch (e2) {} }
+          removed++; continue;
+        }
+        var c = clean(r);
+        if (typeof c === "string") { skipped.push(((r && r.name) || "rad " + (i + 1)) + ": " + c); continue; }
+        var k = keyOf(c.url);
+        if (IMG[k]) c.img = IMG[k];
+        if (!c.thumb && THUMB[k]) c.thumb = THUMB[k];
+        await fdb.collection("finds").doc(k).set(c);
+        saved++;
+      } catch (e) {
+        failed = e && e.code === "invalid_argument" ? "Du har inte behörighet att spara här." : e && e.code === "quota_exceeded" ? "Databasen är full, ta bort gamla fynd först." : "Kunde inte spara just nu, försök igen om en stund.";
+      }
+    }
+    addBtn.disabled = false;
+    var msg = "Sparade " + saved + " fynd" + (removed ? ", tog bort " + removed : "") + ".";
+    if (skipped.length) msg += " Hoppade över " + skipped.length + ": " + skipped.join("; ") + ".";
+    if (failed) msg += " " + failed;
+    addSt.textContent = msg;
+    if ((saved || removed) && !skipped.length && !failed) addTa.value = "";
+  }
+  addBtn.addEventListener("click", saveFinds);
+  (document.getElementById("ins-copy") || document.createElement("button")).addEventListener("click", function () {
+    var b = this, pre = document.getElementById("ins-text");
+    function select() { var rg = document.createRange(); rg.selectNodeContents(pre); var s = window.getSelection(); s.removeAllRanges(); s.addRange(rg); b.textContent = "Texten är markerad, kopiera den"; }
+    function done() { b.textContent = "Kopierad"; setTimeout(function () { b.textContent = "Kopiera instruktionen"; }, 2000); }
+    try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(pre.textContent).then(done, select); else select(); } catch (e) { select(); }
+  });
+
+  // Photos: upload via the row's file field or by dropping an image on the row.
+  var imgSt = document.getElementById("img-status"), busy = false;
+  function shrink(file) {
+    return new Promise(function (resolve) {
+      if (!window.createImageBitmap) return resolve(file);
+      createImageBitmap(file).then(function (bmp) {
+        var s = Math.min(1, 1600 / Math.max(bmp.width, bmp.height)), cv = document.createElement("canvas");
+        cv.width = Math.round(bmp.width * s); cv.height = Math.round(bmp.height * s);
+        cv.getContext("2d").drawImage(bmp, 0, 0, cv.width, cv.height);
+        cv.toBlob(function (b) { resolve(b && b.size < file.size ? b : file); }, "image/jpeg", 0.85);
+      }, function () { resolve(file); });
+    });
+  }
+  async function addImage(key, file) {
+    if (!assetsNs || !fdb || !file) return;
+    if (busy) { imgSt.textContent = "Vänta tills förra bilden är sparad."; return; }
+    if (!/^image\/(png|jpeg|webp)$/.test(file.type)) { imgSt.textContent = "Bilden måste vara PNG, JPEG eller WebP."; return; }
+    busy = true; imgSt.textContent = "Laddar upp bild …";
+    try {
+      var blob = await shrink(file);
+      var res = await assetsNs.upload(blob, { type: blob.type || file.type });
+      var old = IMG[key];
+      await fdb.collection("finds").doc(key).update({ img: res.id });
+      if (old && old !== res.id) { try { await assetsNs.delete(old); } catch (e2) {} }
+      imgSt.textContent = "Bild sparad.";
+    } catch (e) {
+      var code = e && e.code;
+      imgSt.textContent = code === "too_large" ? "Bilden är för stor." : code === "quota_or_state" ? "Lagringsutrymmet för bilder är fullt." : code === "rate_limited" ? "För många uppladdningar på kort tid, vänta en stund." : "Bilden kunde inte sparas.";
+    }
+    busy = false;
+  }
+  function dropRow(e) { return assetsNs && e.target && e.target.closest ? e.target.closest("article[data-key]") : null; }
+  document.addEventListener("change", function (e) {
+    var t = e.target;
+    if (t && t.matches && t.matches('input[type="file"][data-key]')) { addImage(t.getAttribute("data-key"), t.files && t.files[0]); t.value = ""; }
+  });
+  document.addEventListener("dragover", function (e) { var w = dropRow(e); if (w) { e.preventDefault(); w.classList.add("drop"); } });
+  document.addEventListener("dragleave", function (e) { var w = dropRow(e); if (w) w.classList.remove("drop"); });
+  document.addEventListener("drop", function (e) {
+    var w = dropRow(e); if (!w) return;
+    e.preventDefault(); w.classList.remove("drop");
+    addImage(w.getAttribute("data-key"), e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]);
+  });
+  var dlg = document.getElementById("photo"), dlgImg = document.getElementById("photo-img");
+  document.addEventListener("click", function (e) {
+    var b = e.target && e.target.closest ? e.target.closest("button.thumb[data-src]") : null;
+    if (!b) return;
+    dlgImg.src = b.getAttribute("data-src"); dlgImg.alt = b.getAttribute("aria-label") || "";
+    if (dlg.showModal) dlg.showModal(); else window.open(dlgImg.src, "_blank", "noopener");
+  });
+  document.getElementById("photo-close").addEventListener("click", function () { dlg.close(); });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+  document.addEventListener("error", function (e) {
+    var t = e.target, th = t && t.tagName === "IMG" && t.closest ? t.closest(".thumb") : null;
+    if (!th) return;
+    var href = th.getAttribute("data-href") || "";
+    if (/^https:\/\//i.test(href)) th.outerHTML = '<a class="thumb thumb-link" href="' + esc(href) + '" target="_blank" rel="noopener">Visa foto</a>';
+    else { t.style.visibility = "hidden"; th.title = "Bilden kunde inte laddas"; }
+  }, true);
+
+  renderPicks();
+  render();
+
+  // ---- Data från repot (GitHub Pages) i stället för claude.ai-databasen ----
+  // data/chairs.json: stolarna (IN/UNV/OUT/PICKS) – skrivs av datorns jobb och Claude-uppgiften
+  // data/finds.json, data/votes.json, data/photos.json: fynd, dina 👍/👎 och foton
+  // Omdömen sparas med GitHub API och en nyckel som bara finns i den här webbläsaren.
+  var REPO = "timpan8/Ergostolar", TOKEN_KEY = "ergo-gh-token";
+  var ghSt = document.getElementById("add-status");
+  function token() { try { return localStorage.getItem(TOKEN_KEY) || ""; } catch (e) { return ""; } }
+  function getJson(p) { return fetch(p + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(p + " " + r.status); return r.json(); }); }
+  function applyVotes(v) {
+    VOTE = {}; VLABEL = {};
+    Object.keys(v || {}).forEach(function (k) { var x = v[k]; if (x && (x.vote === 1 || x.vote === -1)) { VOTE[k] = x.vote; VLABEL[k] = typeof x.model === "string" ? x.model.slice(0, 60) : k; } });
+  }
+  (async function () {
+    fdb = { files: true }; // visar 👍/👎-knapparna
+    try {
+      var all = await Promise.all([getJson("data/chairs.json"), getJson("data/finds.json").catch(function () { return {}; }), getJson("data/votes.json").catch(function () { return {}; }), getJson("data/photos.json").catch(function () { return {}; })]);
+      var ch = all[0];
+      IN = ch.IN || []; UNV = ch.UNV || []; OUT = ch.OUT || [];
+      PICKS = (ch.PICKS || []).map(function (p) { var it = find(p.name, p.store); return it ? Object.assign({}, p, { item: it }) : null; }).filter(Boolean);
+      document.getElementById("eyebrow").textContent = ch.eyebrow || "";
+      document.getElementById("footer").textContent = ch.footer || "";
+      WEB = Object.keys(all[1]).map(function (k) { return fromDb(all[1][k], k); }).filter(Boolean).sort(function (a, b) { return b.value - a.value || a.price - b.price; });
+      IMG = {}; THUMB = {}; WEB.forEach(function (x) { if (x.img) IMG[x._key] = x.img; if (x.thumb) THUMB[x._key] = x.thumb; });
+      applyVotes(all[2]);
+      PHOTOS = {}; Object.keys(all[3]).forEach(function (u) { if (/^[A-Za-z0-9_-]{16,64}$/.test(all[3][u])) PHOTOS[cleanUrl(u)] = all[3][u]; });
+    } catch (e) {
+      document.getElementById("eyebrow").textContent = "Listan kunde inte laddas just nu. Ladda om sidan om en stund.";
+    }
+    renderVotes(); renderPicks(); render();
+    ghSt.textContent = token() ? "Nyckeln är sparad i den här webbläsaren. Dina 👍/👎 sparas i repot." : "";
+  })();
+
+  // Spara omdömen: hämta votes.json med sha, ändra, skriv tillbaka (försök igen om någon annan hann före)
+  async function saveVote(k, label, v) {
+    var t = token();
+    if (!t) { var p = document.getElementById("add-panel"); p.open = true; ghSt.textContent = "Lägg in en GitHub-nyckel här för att spara dina 👍/👎. Omdömet syns nu men sparas inte."; p.scrollIntoView({ behavior: "smooth", block: "center" }); return false; }
+    var api = "https://api.github.com/repos/" + REPO + "/contents/data/votes.json", head = { Authorization: "Bearer " + t, Accept: "application/vnd.github+json" };
+    for (var i = 0; i < 3; i++) {
+      var r = await fetch(api + "?ref=main&t=" + Date.now(), { headers: head, cache: "no-store" });
+      if (r.status === 401 || r.status === 403) throw new Error("Nyckeln saknar behörighet till " + REPO + ".");
+      var cur = r.ok ? await r.json() : null, data = {};
+      if (cur && cur.content) data = JSON.parse(decodeURIComponent(escape(atob(cur.content.replace(/\n/g, "")))));
+      if (v === 0) delete data[k]; else data[k] = { model: label, vote: v, at: new Date().toISOString().slice(0, 10) };
+      var body = { message: (v === 1 ? "👍 " : v === -1 ? "👎 " : "Ta bort omdöme: ") + label, content: btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 1) + "\n"))), branch: "main" };
+      if (cur && cur.sha) body.sha = cur.sha;
+      var w = await fetch(api, { method: "PUT", headers: Object.assign({ "Content-Type": "application/json" }, head), body: JSON.stringify(body) });
+      if (w.ok) return true;
+      if (w.status !== 409 && w.status !== 422) throw new Error("GitHub svarade " + w.status + ".");
+    }
+    throw new Error("Kunde inte spara, försök igen.");
+  }
+  document.addEventListener("click", async function (e) {
+    var b = e.target && e.target.closest ? e.target.closest("button[data-vote]") : null;
+    if (!b) return;
+    var k = b.getAttribute("data-model"), v = +b.getAttribute("data-vote"), label = b.getAttribute("data-label"), prev = VOTE[k];
+    if (prev === v) delete VOTE[k]; else { VOTE[k] = v; VLABEL[k] = label; }
+    renderVotes(); render();
+    try { if (await saveVote(k, label, prev === v ? 0 : v)) ghSt.textContent = "Sparat: " + (prev === v ? "omdömet borttaget" : (v === 1 ? "👍 " : "👎 ") + label) + "."; }
+    catch (err) { if (prev === undefined) delete VOTE[k]; else VOTE[k] = prev; renderVotes(); render(); ghSt.textContent = err.message; document.getElementById("add-panel").open = true; }
+  });
+  document.getElementById("gh-save").addEventListener("click", function () {
+    var v = document.getElementById("gh-token").value.trim();
+    if (!/^(github_pat_|ghp_)[A-Za-z0-9_]{20,}$/.test(v)) { ghSt.textContent = "Det ser inte ut som en GitHub-nyckel (börjar med github_pat_)."; return; }
+    try { localStorage.setItem(TOKEN_KEY, v); ghSt.textContent = "Nyckeln är sparad i den här webbläsaren."; } catch (e) { ghSt.textContent = "Webbläsaren tillåter inte att nyckeln sparas."; }
+    document.getElementById("gh-token").value = "";
+  });
+  document.getElementById("gh-forget").addEventListener("click", function () { try { localStorage.removeItem(TOKEN_KEY); } catch (e) {} ghSt.textContent = "Nyckeln är borttagen från den här webbläsaren."; });
+})();
+</script>
+
+</body></html>
