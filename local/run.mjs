@@ -111,10 +111,10 @@ async function check(it) {
   try { html = await getText(it.url); delete it.missing; }
   catch (e) {
     if (e instanceof Gone) {
-      // Sidan saknas: flytta till Slutsålt först efter två körningar i rad (en sajt kan byggas om)
-      it.missing = (it.missing || 0) + 1;
-      if (it.missing >= 2) return { state: 'out', stock: 'Borttagen' };
-      report.granska.push(`${it.name} (${new URL(it.url).host}): sidan finns inte (404) – flyttas till Slutsålt om den saknas nästa körning också`);
+      // Sidan saknas: flytta till Slutsålt först när den saknats i ett dygn (en sajt kan byggas om)
+      if (typeof it.missing !== 'string') it.missing = now.toISOString();
+      if (now - new Date(it.missing) >= 20 * 3600e3) return { state: 'out', stock: 'Borttagen' };
+      report.granska.push(`${it.name} (${new URL(it.url).host}): sidan finns inte (404) sedan ${it.missing.slice(0, 16).replace('T', ' ')} – flyttas till Slutsålt om den saknas i ett dygn`);
       return null;
     }
     report.olasta.push(`${it.name} (${new URL(it.url).host}): ${e.message}`);
