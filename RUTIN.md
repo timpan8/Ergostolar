@@ -1,0 +1,56 @@
+# Claude-uppgiften för Ergostolar
+
+Uppgiften körs 08:10 och 18:10. **Datorn hämtar själv** (07:40, 11:40, 17:40, `local/run.mjs` via jobbköraren i
+`C:\Users\TimLi\Dev\Automation`): pris och lager på varje stol i listan, och nya kandidater från Rekomo, BBS, RP, Relovie och
+Blocket. Uppgiften gör det som kräver omdöme eller en riktig webbläsare. Skriv allt på svenska.
+
+**Arbetsmapp:** `C:\Users\TimLi\Dev\Ergostolar`. Börja med `git pull --rebase --autostash`.
+**Uppgiften committar och pushar aldrig.** Ändringar läggs i inkorgen `C:\Users\TimLi\Dev\Ergostolar\inbox\`; datorns jobb
+"ergostolar-inkorg" publicerar inom 15 minuter. Ändra inte filerna i `data/` direkt.
+Köp aldrig något, kontakta aldrig säljare och logga inte in någonstans.
+
+## Tims krav ("Passar dig")
+- Budget under 10 000 kr INKLUSIVE moms, frakt och eventuellt nackstöd.
+- Bor i Stockholm, behöver inte provsitta. Butiker som skickar till Stockholm (hela Sverige, eller EU om totalen med frakt ryms)
+  är lika bra. Stolar som bara kan hämtas ska hämtas i Stockholmsområdet, annars tas de bort.
+- Långa arbetsdagar, 170–185 cm, inga besvär. STOPPAD rygg och sits (inte mesh), HÖG rygg och NACKSTÖD (monterat eller tillval).
+- Begagnat/renoverat från seriösa aktörer, gärna med garanti/öppet köp. Håll också koll på prisvärda 24/7-stolar
+  (t.ex. RH Logic 400 Elite 24/7) inom samma budget.
+
+## Tims omdömen
+`data/votes.json`: `{ "<modellnyckel>": { "model": "...", "vote": 1 | -1 } }`. Prioritera gillade modeller, lägg inte till nya
+exemplar av ogillade och välj dem inte som toppval. Ändra aldrig i votes.json (Tim sätter dem på sidan).
+
+## 1. Läs datorns resultat
+- `C:\Users\TimLi\Dev\Automation\output\ergostolar\senaste-kontroll.json`: `andrade` (prisändringar), `slut` (flyttade till
+  Slutsålt), `tillbaka` (i lager igen), `granska` (stora prishopp eller sidor som saknas – kontrollera dem), `olasta`
+  (sidor datorn inte kunde läsa, t.ex. CDON med botspärr – kolla dem själv).
+- `...\output\ergostolar\kandidater.json`: nya stolar av bevakade modeller som inte finns i listan. Bedöm dem (steg 2).
+- Dagens logg: `C:\Users\TimLi\Dev\Automation\logs\ergostolar\`.
+
+## 2. Bedöm och uppdatera listan
+Utgå från `data/chairs.json` (`IN` = går att köpa, `UNV` = ej verifierat, `OUT` = slutsålt, `PICKS`, `eyebrow`, `footer`).
+- Kandidater: öppna produktsidan (WebFetch eller Chrome) och avgör rygg, rygghöjd, nackstöd, pris inkl. moms, frakt och lager.
+  Lägg verifierade som passar budgeten i `IN`, osäkra i `UNV`. Max ca 10–15 sidor per körning.
+- Sidor datorn inte kunde läsa och raderna under `granska`: kolla dem och rätta pris/lager/flytta.
+- Fält per stol: name, url, store, stock, state (in/few/unv/out), tier (Premium/Mycket bra/Bra/Specialfall), value (1–5),
+  price (heltal kr INKL moms), approx, note, back (pad/mesh/saddle), tall, neck (yes/opt/no/unk), neckNote, why, h24 (bara om
+  24/7-klassad), newPrice. Behåll modellnamnet i name. Inga påhittade data – hellre "unk"/"Ej verifierat".
+  Moms: Rekomo, RP, Rafz, AKIAB och Yllw visar exkl. moms → ×1,25.
+- `PICKS`: tre bästa köpen för Tim enligt kraven och omdömena, med frakt. Format:
+  `{ "label", "name", "store" (början av butiksnamnet), "price"?, "priceNote"?, "text", "where" }` – name+store måste matcha en stol i IN.
+- `eyebrow`: behåll texten, datorn uppdaterar "kollat …". `footer`: 3–6 meningar om vad som ändrats sedan förra kollen.
+- Lägg hela den uppdaterade listan som `inbox\chairs.json`.
+
+## 3. Marknadsplatser i Chrome (Claude in Chrome)
+Tradera, Facebook Marketplace (Stockholm) och CDON kräver webbläsare. Sök på bevakade modeller (RH Logic 400, Mereo, Extend,
+Kinnarps 8000/Plus/9000, Savo XO, HÅG H09, Malmstolen, Steelcase Leap, samt "24/7", "kontrollrumsstol"). Ta bara med annonser
+du själv öppnat, högst 10 fynd, bästa först. Lägg dem som `inbox\finds.json`:
+`{ "<url>": { name, url, store, stock, state, tier, value, price, note, back, tall, neck, neckNote, why, checked (ÅÅÅÅ-MM-DD), photoUrl, h24?, newPrice? } }`.
+Såld annons: samma url med `"state": "out"`. Ska bort helt: `{ "<url>": { "remove": true } }`. Blocket sköts av datorn.
+
+## 4. Avisering
+Skicka en kort pushnotis ENDAST om något viktigt hänt: en ny stol som passar Tim eller en ny prisvärd 24/7-stol under
+10 000 kr inkl. frakt (särskilt av en gillad modell), ett tydligt prisfall (>10 %) på en sådan stol, eller att ett av de tre
+toppvalen tagit slut. 1–3 meningar med modell, butik, pris inkl. moms (och frakt) och länken https://timpan8.github.io/Ergostolar/.
+Annars: avsluta med en rad om att listan är granskad.

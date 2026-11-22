@@ -1,5 +1,5 @@
 {
- "eyebrow": "Begagnat & renoverat · leverans till Stockholm · kollat 22 nov 2026, ca 17.45",
+ "eyebrow": "Begagnat & renoverat · leverans till Stockholm · kollat 22 nov 2026, ca 19.41",
  "footer": "Priser och lager ändras snabbt. Lagerstatus hämtad från butikernas webbsidor 22 november 2026, ca kl. 17.45. Sedan förra kollen (22 nov ca 11.45) har den nya RH Extend 120 med nackstöd hos Rekomo tagit slut och flyttats till Slutsålt. En ny Kinnarps 6000/8000 (6240/8240) med hög rygg hos Rekomo i Göteborg (3 250 kr) har lagts till under ej verifierat, eftersom nackstöd inte anges. Övriga priser och lager är oförändrade. De tre toppvalen hos BBS finns kvar enligt märkessidorna: RH Logic 400 med nackstöd för 3 119 kr (1 styck), Kinnarps 6000/8000 omklädd med hög rygg (12 styck) plus BBS Kinnarps-nackstöd (30 styck), totalt cirka 6 860 kr, och Kinnarps 8000 Plus med nackstöd (3 styck). BBS produktsidor saknar köpknapp, så ring BBS (08-85 92 00). Ingen annan slutsåld stol har kommit tillbaka, och Yllws Mereo 220 och Kinnarps Y-stol är fortfarande reserverade. Ingen ny stol som passar och ingen ny begagnad 24/7-stol under 10 000 kr hittades; alla RH Logic 400 Elite hos BBS har 0 i lager. RH Extend 220 hos Rekomo är fortfarande förbeställning med väntad leverans vecka 48. CDON-sidorna, RP:s Gesture-sida och Rekomos Logic 400 med nya armstöd gick inte att läsa i dag; där gäller uppgifterna från tidigare koll. Rafz visar fortfarande inte pris och lager utan att man väljer variant, så ring Rafz (08-800 100). Yllw visar ofta ett andra, högre pris utan etikett (ca 1,43 gånger exkl.-priset); här används exkl.-priset gånger 1,25, så bekräfta slutpris och frakt till Stockholm med Yllw (010-209 09 03). Nackstöd enligt butikernas produktbeskrivningar och Rekomos lista \"Produkter som ingår\". Nypriser är butikens egna jämförpriser där de finns, annars utelämnade.",
  "IN": [
   {
@@ -96,7 +96,7 @@
    "name": "RH Extend 220, arm- och nackstöd",
    "url": "https://www.rekomo.se/produkt/kontorsstol-extend-220-37802/",
    "store": "Rekomo",
-   "stock": "Förbeställning, 58 inkommande v. 48",
+   "stock": "58 i lager",
    "state": "in",
    "tier": "Premium",
    "value": 5,
@@ -310,7 +310,7 @@
    "name": "Kinnarps 6000/8000, omklädd, hög rygg, svart",
    "url": "https://www.rekomo.se/produkt/kontorsstol-6000-8000-omkladd-11113-35698/",
    "store": "Rekomo",
-   "stock": "3 i lager, kläs om ca 3–4 v",
+   "stock": "3 i lager",
    "state": "in",
    "tier": "Bra",
    "value": 4,
@@ -458,7 +458,8 @@
    "back": "pad",
    "tall": false,
    "neck": "yes",
-   "why": "Ny i listan. Fullt utrustad Logic 220 med nackstöd, men ryggens höjd anges inte och med det högre priset plus frakt hamnar den över 10 000 kr, så fråga Yllw (010-209 09 03)."
+   "why": "Ny i listan. Fullt utrustad Logic 220 med nackstöd, men ryggens höjd anges inte och med det högre priset plus frakt hamnar den över 10 000 kr, så fråga Yllw (010-209 09 03).",
+   "missing": 1
   },
   {
    "name": "Kinnarps Plus 8000 med nackstöd, svart tyg",
@@ -474,7 +475,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Kinnarps toppserie med hög stoppad rygg och nackstöd. Under budget även med sidans högre pris, men fråga Yllw om frakt till Stockholm (010-209 09 03)."
+   "why": "Ny i listan. Kinnarps toppserie med hög stoppad rygg och nackstöd. Under budget även med sidans högre pris, men fråga Yllw om frakt till Stockholm (010-209 09 03).",
+   "missing": 1
   },
   {
    "name": "Kinnarps Plus 8000 med nackstöd, svart tyg, 5 800 exkl.",
@@ -490,7 +492,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Hög stoppad rygg med nackstöd, men lite dyrare än exemplaret ovan."
+   "why": "Ny i listan. Hög stoppad rygg med nackstöd, men lite dyrare än exemplaret ovan.",
+   "missing": 1
   },
   {
    "name": "Kinnarps Plus 8 Soft med nackstöd, omklädd svart",
@@ -506,7 +509,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Nyklädd Kinnarps Plus med mjuk stoppning och nackstöd."
+   "why": "Ny i listan. Nyklädd Kinnarps Plus med mjuk stoppning och nackstöd.",
+   "missing": 1
   },
   {
    "name": "Kinnarps Plus 8000 med nackstöd, svart läder",
@@ -522,7 +526,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Hög rygg och nackstöd i läder, som blir varmare än tyg under långa dagar."
+   "why": "Ny i listan. Hög rygg och nackstöd i läder, som blir varmare än tyg under långa dagar.",
+   "missing": 1
   },
   {
    "name": "Kinnarps Plus 8 Soft, omklädd, hög rygg, nackstöd",
@@ -537,7 +542,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Kinnarps toppmodell med hög rygg och justerbart nackstöd, nyklädd i tyg och fyra lediga exemplar. Fråga Yllw om frakt till Stockholm och garanti (010-209 09 03)."
+   "why": "Ny i listan. Kinnarps toppmodell med hög rygg och justerbart nackstöd, nyklädd i tyg och fyra lediga exemplar. Fråga Yllw om frakt till Stockholm och garanti (010-209 09 03).",
+   "missing": 1
   },
   {
    "name": "RH Logic 400 med nackstöd, svart",
@@ -552,7 +558,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Arm- och nackstöd ingår och 21 finns tillgängliga. Billigaste Logic 400 med nackstöd, men Yllw levererar med egna bilar till Stockholm, men fraktpris, skick och garanti anges inte (010-209 09 03)."
+   "why": "Ny i listan. Arm- och nackstöd ingår och 21 finns tillgängliga. Billigaste Logic 400 med nackstöd, men Yllw levererar med egna bilar till Stockholm, men fraktpris, skick och garanti anges inte (010-209 09 03).",
+   "missing": 1
   },
   {
    "name": "Malmstolen Classic 4000 med nackstöd, grå",
@@ -567,7 +574,8 @@
    "back": "pad",
    "tall": false,
    "neck": "yes",
-   "why": "Ny i listan. Nyrenoverad svensk stol med stoppad rygg och nackstöd. Ryggens höjd och frakt till Stockholm anges inte."
+   "why": "Ny i listan. Nyrenoverad svensk stol med stoppad rygg och nackstöd. Ryggens höjd och frakt till Stockholm anges inte.",
+   "missing": 1
   },
   {
    "name": "Malmstolen Classic 4000 med nackstöd",
@@ -582,7 +590,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Svensktillverkad stol helt klädd i tyg med höjdställbart nackstöd. Ryggens höjd, garanti och frakt till Stockholm står inte på sidan, så fråga Yllw (010-209 09 03)."
+   "why": "Ny i listan. Svensktillverkad stol helt klädd i tyg med höjdställbart nackstöd. Ryggens höjd, garanti och frakt till Stockholm står inte på sidan, så fråga Yllw (010-209 09 03).",
+   "missing": 1
   },
   {
    "name": "Lomax Kontorsstol 24/7 Camira (ny)",
@@ -706,7 +715,8 @@
    "back": "pad",
    "tall": true,
    "neck": "unk",
-   "why": "Ny i listan. Renoverad Logic 220 i tyg, men rygghöjd, nackstöd och frakt är inte bekräftade."
+   "why": "Ny i listan. Renoverad Logic 220 i tyg, men rygghöjd, nackstöd och frakt är inte bekräftade.",
+   "missing": 1
   },
   {
    "name": "HÅG H05",
@@ -766,7 +776,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Justerbart nackstöd och armstöd enligt beskrivningen, men klädsel och frakt anges inte. Ryms i budget bara om frakten är under 250 kr och om 11 154 kr inte är slutpriset."
+   "why": "Ny i listan. Justerbart nackstöd och armstöd enligt beskrivningen, men klädsel och frakt anges inte. Ryms i budget bara om frakten är under 250 kr och om 11 154 kr inte är slutpriset.",
+   "missing": 1
   },
   {
    "name": "RH Logic 400, hög rygg, svart",
@@ -781,7 +792,8 @@
    "back": "pad",
    "tall": true,
    "neck": "unk",
-   "why": "Logic 400 med hög rygg, men nackstöd, klädsel och frakt anges inte. Nackstöd för 1 130 kr skulle ta den över budget."
+   "why": "Logic 400 med hög rygg, men nackstöd, klädsel och frakt anges inte. Nackstöd för 1 130 kr skulle ta den över budget.",
+   "missing": 1
   },
   {
    "name": "RH Logic 400, hög rygg, grått tyg",
@@ -797,7 +809,8 @@
    "back": "pad",
    "tall": true,
    "neck": "unk",
-   "why": "Ny i listan. Renoverad Logic 400 med hög stoppad rygg, men nackstöd nämns inte och med nackstöd och frakt hamnar den nära eller över budget."
+   "why": "Ny i listan. Renoverad Logic 400 med hög stoppad rygg, men nackstöd nämns inte och med nackstöd och frakt hamnar den nära eller över budget.",
+   "missing": 1
   },
   {
    "name": "RH Logic 400 (Logic 4), hög rygg, nackstöd, ny klädsel",
@@ -845,22 +858,6 @@
    "why": "Tygklädd Savo med armstöd och nackstöd enligt specifikationen och beskrivningen. Ryggens höjd anges inte, så fråga butiken."
   },
   {
-   "name": "RH Extend, svart",
-   "url": "https://www.rekomo.se/produkt/kontorsstol-extend-11169/",
-   "store": "Rekomo, Malmö",
-   "stock": "I lager i Malmö, antal ej angivet",
-   "state": "unv",
-   "tier": "Bra",
-   "value": 3,
-   "price": 3250,
-   "note": "2 600 exkl. moms · skick 4/5 · 3 års garanti · frakt tillkommer, pris ej angivet",
-   "back": "pad",
-   "tall": false,
-   "neck": "opt",
-   "neckNote": "+1 868 kr, passform oklar",
-   "why": "Billigaste Extend, men varken armstöd eller nackstöd ingår och ryggens höjd anges inte."
-  },
-  {
    "name": "Savo S3 med nackstöd, blått tyg",
    "url": "https://www.rekomo.se/produkt/savo-kontorsstol-s3-2-30806/",
    "store": "Rekomo, Stockholm",
@@ -889,13 +886,14 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Hög stoppad Logic 400 med justerbart nackstöd, men priset ligger nära taket. Annat artikelnummer än den svart/gröna ovan, så troligen en egen stol."
+   "why": "Hög stoppad Logic 400 med justerbart nackstöd, men priset ligger nära taket. Annat artikelnummer än den svart/gröna ovan, så troligen en egen stol.",
+   "missing": 1
   },
   {
    "name": "Kinnarps 9000 med nackstöd, ljusblå",
    "url": "https://www.rekomo.se/produkt/kinnarps-kontorsstol-9000-2-30787/",
    "store": "Rekomo, Göteborg",
-   "stock": "1 i lager (Göteborg)",
+   "stock": "1 i lager",
    "state": "unv",
    "tier": "Mycket bra",
    "value": 4,
@@ -920,7 +918,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Renoverad Logic 220 i svart tyg med nackstöd. Ryggens höjd anges inte, och med det högre priset plus frakt kan den hamna nära 10 000 kr, så fråga Yllw (010-209 09 03)."
+   "why": "Ny i listan. Renoverad Logic 220 i svart tyg med nackstöd. Ryggens höjd anges inte, och med det högre priset plus frakt kan den hamna nära 10 000 kr, så fråga Yllw (010-209 09 03).",
+   "missing": 1
   },
   {
    "name": "Kinnarps 9000, ny klädsel",
@@ -946,7 +945,7 @@
    "state": "unv",
    "tier": "Mycket bra",
    "value": 4,
-   "price": 6038,
+   "price": 5750,
    "approx": true,
    "note": "4 830 exkl. moms · skick 4 · 3 års garanti · leverans 3–7 dagar i hela Sverige, pris ej angivet",
    "back": "pad",
@@ -969,22 +968,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Hög stoppad Logic 220 där nackstöd ingår enligt sidan, till lågt pris. Fråga Yllw om färg, skick och frakt till Stockholm (010-209 09 03)."
-  },
-  {
-   "name": "HÅG H05, svart tyg",
-   "url": "https://www.rekomo.se/produkt/kontorsstol-h05-5639/",
-   "store": "Rekomo, Malmö",
-   "stock": "I lager i Malmö, antal ej angivet",
-   "state": "unv",
-   "tier": "Bra",
-   "value": 3,
-   "price": 4000,
-   "note": "3 200 exkl. moms · skick 4/5 · 3 års garanti · frakt tillkommer, pris ej angivet",
-   "back": "pad",
-   "tall": false,
-   "neck": "unk",
-   "why": "Ny i listan. Billig stoppad HÅG med garanti, men ryggen verkar låg och nackstöd nämns inte."
+   "why": "Ny i listan. Hög stoppad Logic 220 där nackstöd ingår enligt sidan, till lågt pris. Fråga Yllw om färg, skick och frakt till Stockholm (010-209 09 03).",
+   "missing": 1
   },
   {
    "name": "Kinnarps 9000 med nackstöd i läder, svart tyg",
@@ -1000,7 +985,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Kinnarps 9000 med stoppad rygg och nackstöd i läder, men med sidans högre pris och frakt kan den gå över 10 000 kr, så fråga Yllw först (010-209 09 03)."
+   "why": "Ny i listan. Kinnarps 9000 med stoppad rygg och nackstöd i läder, men med sidans högre pris och frakt kan den gå över 10 000 kr, så fråga Yllw först (010-209 09 03).",
+   "missing": 1
   },
   {
    "name": "Kinnarps Plus 6/Plus 8, hög rygg, omklädd",
@@ -1023,7 +1009,7 @@
    "name": "Kinnarps Capella, mörkgrå",
    "url": "https://www.rekomo.se/produkt/kontorsstol-capella-27010/",
    "store": "Rekomo, Stockholm m.fl.",
-   "stock": "10 i lager i Stockholm",
+   "stock": "10 i lager",
    "state": "unv",
    "tier": "Bra",
    "value": 3,
@@ -1048,7 +1034,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Helklädd Mereo 220 i svart tyg med arm- och nackstöd, två lediga exemplar. Fråga Yllw om slutpris och frakt till Stockholm (010-209 09 03)."
+   "why": "Ny i listan. Helklädd Mereo 220 i svart tyg med arm- och nackstöd, två lediga exemplar. Fråga Yllw om slutpris och frakt till Stockholm (010-209 09 03).",
+   "missing": 1
   },
   {
    "name": "RH Extend 120 med nackstöd, grått tyg",
@@ -1064,7 +1051,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Billig Extend 120 i grått tyg med ställbart nackstöd. Ryggens höjd står inte uttryckligen på sidan, så fråga Yllw."
+   "why": "Ny i listan. Billig Extend 120 i grått tyg med ställbart nackstöd. Ryggens höjd står inte uttryckligen på sidan, så fråga Yllw.",
+   "missing": 1
   },
   {
    "name": "Savo Maxikon med nackstöd, svart",
@@ -1111,7 +1099,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Renoverad Logic 400 med hög rygg och nackstöd, men med frakt kan den gå över 10 000 kr, så bekräfta slutpris med Yllw (010-209 09 03)."
+   "why": "Ny i listan. Renoverad Logic 400 med hög rygg och nackstöd, men med frakt kan den gå över 10 000 kr, så bekräfta slutpris med Yllw (010-209 09 03).",
+   "missing": 1
   },
   {
    "name": "Kinnarps Plus 8000 Soft, svart tyg",
@@ -1126,10 +1115,42 @@
    "back": "pad",
    "tall": true,
    "neck": "unk",
-   "why": "Ny i listan. Stoppad Kinnarps Plus med hög rygg till bra pris, men nackstöd nämns inte, så fråga Yllw (010-209 09 03)."
+   "why": "Ny i listan. Stoppad Kinnarps Plus med hög rygg till bra pris, men nackstöd nämns inte, så fråga Yllw (010-209 09 03).",
+   "missing": 1
   }
  ],
  "OUT": [
+  {
+   "name": "HÅG H05, svart tyg",
+   "url": "https://www.rekomo.se/produkt/kontorsstol-h05-5639/",
+   "store": "Rekomo, Malmö",
+   "stock": "Slut",
+   "state": "out",
+   "tier": "Bra",
+   "value": 3,
+   "price": 4000,
+   "note": "3 200 exkl. moms · skick 4/5 · 3 års garanti · frakt tillkommer, pris ej angivet",
+   "back": "pad",
+   "tall": false,
+   "neck": "unk",
+   "why": "Ny i listan. Billig stoppad HÅG med garanti, men ryggen verkar låg och nackstöd nämns inte."
+  },
+  {
+   "name": "RH Extend, svart",
+   "url": "https://www.rekomo.se/produkt/kontorsstol-extend-11169/",
+   "store": "Rekomo, Malmö",
+   "stock": "Slut",
+   "state": "out",
+   "tier": "Bra",
+   "value": 3,
+   "price": 3250,
+   "note": "2 600 exkl. moms · skick 4/5 · 3 års garanti · frakt tillkommer, pris ej angivet",
+   "back": "pad",
+   "tall": false,
+   "neck": "opt",
+   "neckNote": "+1 868 kr, passform oklar",
+   "why": "Billigaste Extend, men varken armstöd eller nackstöd ingår och ryggens höjd anges inte."
+  },
   {
    "name": "RH Extend 120, ny, nackstöd",
    "url": "https://www.rekomo.se/produkt/kontorsstol-extend-120-uni-31107/",
@@ -1333,7 +1354,7 @@
    "name": "RH Mereo 220, hög rygg",
    "url": "https://factory.yllw.com/en/kontorsstol-mereo-220-3",
    "store": "Yllw Factory",
-   "stock": "Reserverad",
+   "stock": "Slut",
    "state": "out",
    "tier": "Bra",
    "value": 3,
@@ -1434,7 +1455,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Hög rygg och höjdjusterbart nackstöd till lågt pris, men exemplaret är reserverat just nu."
+   "why": "Ny i listan. Hög rygg och höjdjusterbart nackstöd till lågt pris, men exemplaret är reserverat just nu.",
+   "missing": 1
   },
   {
    "name": "Savo XO, svart tyg",
@@ -1736,7 +1758,8 @@
    "back": "pad",
    "tall": true,
    "neck": "no",
-   "why": "RP har tagit bort produktsidan, och Rekomo listar ingen Gesture."
+   "why": "RP har tagit bort produktsidan, och Rekomo listar ingen Gesture.",
+   "missing": 1
   }
  ],
  "PICKS": [
@@ -1763,5 +1786,6 @@
    "name": "Kinnarps 8000 Plus, ny klädsel, hög rygg, nackstöd",
    "store": "BBS"
   }
- ]
+ ],
+ "autoChecked": "2026-11-22T18:41:56.437Z"
 }
