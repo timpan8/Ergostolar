@@ -16,7 +16,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import os from 'node:os';
-import { getText, ldObjects, Blocked, Gone } from './fetch.mjs';
+import { getText, ldObjects, Blocked, Gone, sharedBlocket } from './fetch.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CHAIRS = path.join(ROOT, 'data', 'chairs.json');
@@ -185,6 +185,7 @@ const LISTS = [
   'https://relovie.com/k/hem-inredning/mobler/kontorsstolar'
 ];
 const BLOCKET_Q = ['logic 400', 'kinnarps 8000', 'kinnarps plus', 'savo xo', 'rh mereo', 'rh extend', 'håg h09', 'malmstolen', 'steelcase leap', 'kontorsstol nackstöd'];
+if (sharedBlocket) await sharedBlocket.needs('ergostolar', BLOCKET_Q); // anmäl sökorden till det gemensamma Blocket-jobbet
 const known = new Set([...ch.IN, ...ch.UNV, ...ch.OUT].map(x => cleanUrl(x.url)));
 try { Object.values(JSON.parse(await readFile(FINDS, 'utf8'))).forEach(f => known.add(cleanUrl(f.url))); } catch {}
 const cands = new Map();
@@ -206,13 +207,19 @@ await Promise.all([
   }),
   ...BLOCKET_Q.map(async q => {
     try {
-      const html = await getText('https://www.blocket.se/recommerce/forsale/search?q=' + encodeURIComponent(q));
-      const s = html.match(/<script[^>]*id="seoStructuredData"[^>]*>([\s\S]*?)<\/script>/);
-      if (!s) throw new Error('inga sökresultat i sidan');
-      for (const el of JSON.parse(s[1]).mainEntity?.itemListElement || []) {
-        const it = el.item || {}, u = cleanUrl(it.url), price = +(it.offers?.price || 0);
-        if (!u || known.has(u) || cands.has(u) || !MODELS.test(it.name || '') || !(price >= 500 && price < 10000)) continue;
-        cands.set(u, { name: it.name, url: u, källa: 'blocket.se', pris: price, bild: it.image || null, sökord: q });
+      let ads;
+      // Med jobbköraren: delad Blocket-cache (det gemensamma Blocket-jobbet har oftast redan hämtat sökningen)
+      if (sharedBlocket) ads = (await sharedBlocket.search(q, { maxAgeH: 3 })).items.map(a => ({ name: a.titel, url: a.url, price: a.pris, image: a.bild }));
+      else {
+        const html = await getText('https://www.blocket.se/recommerce/forsale/search?q=' + encodeURIComponent(q));
+        const s = html.match(/<script[^>]*id="seoStructuredData"[^>]*>([\s\S]*?)<\/script>/);
+        if (!s) throw new Error('inga sökresultat i sidan');
+        ads = (JSON.parse(s[1]).mainEntity?.itemListElement || []).map(el => el.item || {}).map(it => ({ name: it.name, url: it.url, price: +(it.offers?.price || 0), image: it.image }));
+      }
+      for (const a of ads) {
+        const u = cleanUrl(a.url);
+        if (!u || known.has(u) || cands.has(u) || !MODELS.test(a.name || '') || !(a.price >= 500 && a.price < 10000)) continue;
+        cands.set(u, { name: a.name, url: u, källa: 'blocket.se', pris: a.price, bild: a.image || null, sökord: q });
       }
     } catch (e) { report.olasta.push(`Blocket "${q}": ${e.message}`); }
   })

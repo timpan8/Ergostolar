@@ -5,8 +5,13 @@ const MIN_GAP = +(process.env.FETCH_MIN_GAP_MS || 4000);
 const pause = ms => new Promise(r => setTimeout(r, ms));
 const lastHit = new Map(), queue = new Map();
 
-export class Blocked extends Error {}
-export class Gone extends Error {}
+// Körs jobbet av jobbköraren (AUTOMATION_HOME satt) används det gemensamma hämtbiblioteket: takten per sajt gäller då
+// för alla jobb tillsammans, och Blocket-sökningar delas via cachen. Annars hämtar modulen själv som nedan.
+const HOME = process.env.AUTOMATION_HOME && 'file:///' + process.env.AUTOMATION_HOME.replace(/\\/g, '/');
+const SHARED = HOME ? await import(HOME + '/lib/fetch.mjs') : null;
+export const sharedBlocket = HOME ? await import(HOME + '/lib/blocket.mjs') : null;
+export const Blocked = SHARED ? SHARED.Blocked : class Blocked extends Error {};
+export const Gone = SHARED ? SHARED.Gone : class Gone extends Error {};
 
 function throttled(host, fn) {
   const next = (queue.get(host) || Promise.resolve()).catch(() => {}).then(async () => {
@@ -20,6 +25,7 @@ function throttled(host, fn) {
 
 // Hämtar en sida som text. Gone = 404/410, Blocked = botspärr.
 export async function getText(url) {
+  if (SHARED) return SHARED.getText(url);
   const host = new URL(url).host;
   for (let i = 0; i < 3; i++) {
     const r = await throttled(host, () => fetch(url, { headers: { 'User-Agent': UA, 'Accept': 'text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8', 'Accept-Language': 'sv-SE,sv;q=0.9' }, redirect: 'follow', signal: AbortSignal.timeout(30000) }))
