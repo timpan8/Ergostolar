@@ -9,6 +9,12 @@ Blocket. Uppgiften gör det som kräver omdöme eller en riktig webbläsare. Skr
 "ergostolar-inkorg" publicerar inom 15 minuter. Ändra inte filerna i `data/` direkt.
 Köp aldrig något, kontakta aldrig säljare och logga inte in någonstans.
 
+**Butiksregistret** `C:\Users\TimLi\Dev\Automation\registry\butiker.json` (regler i `registry\README.md`) är det gemensamma
+underlaget för vilka butiker som kollas. Ergostolars butiker har kategorin `kontor` och `ergostolar` i `projekt`.
+Hittar du en ny relevant butik (t.ex. en återbruksbutik för kontorsmöbler) eller lär dig något nytt om en befintlig
+(botspärr, moms, strukturerad data, frakt): skriv in det direkt i registret och nämn det i rapporten.
+Butiker med `hamtning: "dator"` hämtas redan av datorns jobb.
+
 ## Tims krav ("Passar dig")
 - Budget under 10 000 kr INKLUSIVE moms, frakt och eventuellt nackstöd.
 - Bor i Stockholm, behöver inte provsitta. Butiker som skickar till Stockholm (hela Sverige, eller EU om totalen med frakt ryms)
