@@ -48,10 +48,19 @@ Utgå från `data/chairs.json` (`IN` = går att köpa, `UNV` = ej verifierat, `O
 - `eyebrow`: behåll texten, datorn uppdaterar "kollat …". `footer`: 3–6 meningar om vad som ändrats sedan förra kollen.
 - Lägg hela den uppdaterade listan som `inbox\chairs.json`.
 
-## 3. Marknadsplatser i Chrome (Claude in Chrome)
-Tradera, Facebook Marketplace (Stockholm) och CDON kräver webbläsare. Sök på bevakade modeller (RH Logic 400, Mereo, Extend,
-Kinnarps 8000/Plus/9000, Savo XO, HÅG H09, Malmstolen, Steelcase Leap, samt "24/7", "kontrollrumsstol"). Ta bara med annonser
-du själv öppnat, högst 10 fynd, bästa först. Lägg dem som `inbox\finds.json`:
+## 3. Marknadsplatser
+**Facebook Marketplace** söker datorn själv via Apify, högst en gång per dag (jobbet `marketplace` kl. 07:00).
+- Vad som söks styr du i `C:\Users\TimLi\Dev\Automation\bestallningar\marketplace.json` (sökningar med `"projekt": "ergostolar"`).
+  Fyll på och rensa enligt `bestallningar\README.md`; starta aldrig sökningar själv.
+- Läs resultatet: `C:\Users\TimLi\Dev\Automation\output\marketplace\senaste.json` (dagens nya annonser, prisändringar, sålda)
+  och `...\archive\marketplace\annonser.json` (alla annonser med historik). Sök inte om det som redan finns där.
+- Bedöm de nya annonserna (rätt modell, stoppad hög rygg, nackstöd, pris + frakt eller hämtning i Stockholmsområdet). Öppna en
+  annons i Chrome bara om titel, pris och bild inte räcker för att bedöma den.
+
+**Tradera och CDON** kräver webbläsare (botspärr) och kollas i Claude in Chrome. Sök på bevakade modeller (RH Logic 400, Mereo,
+Extend, Kinnarps 8000/Plus/9000, Savo XO, HÅG H09, Malmstolen, Steelcase Leap, samt "24/7", "kontrollrumsstol").
+
+Fynd från alla marknadsplatser: ta bara med annonser du bedömt, högst 10 fynd, bästa först. Lägg dem som `inbox\finds.json`:
 `{ "<url>": { name, url, store, stock, state, tier, value, price, note, back, tall, neck, neckNote, why, checked (ÅÅÅÅ-MM-DD), photoUrl, h24?, newPrice? } }`.
 Såld annons: samma url med `"state": "out"`. Ska bort helt: `{ "<url>": { "remove": true } }`. Blocket sköts av datorn.
 
