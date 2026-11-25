@@ -1,5 +1,5 @@
 {
- "eyebrow": "Begagnat & renoverat · leverans till Stockholm · kollat 24 nov 2026, ca 18.00",
+ "eyebrow": "Begagnat & renoverat · leverans till Stockholm · kollat 25 nov 2026, ca 08.45",
  "footer": "Priser och lager ändras snabbt. Lagerstatus hämtad från butikernas webbsidor 22 november 2026, ca kl. 17.45. Sedan förra kollen (22 nov ca 11.45) har den nya RH Extend 120 med nackstöd hos Rekomo tagit slut och flyttats till Slutsålt. En ny Kinnarps 6000/8000 (6240/8240) med hög rygg hos Rekomo i Göteborg (3 250 kr) har lagts till under ej verifierat, eftersom nackstöd inte anges. Övriga priser och lager är oförändrade. De tre toppvalen hos BBS finns kvar enligt märkessidorna: RH Logic 400 med nackstöd för 3 119 kr (1 styck), Kinnarps 6000/8000 omklädd med hög rygg (12 styck) plus BBS Kinnarps-nackstöd (30 styck), totalt cirka 6 860 kr, och Kinnarps 8000 Plus med nackstöd (3 styck). BBS produktsidor saknar köpknapp, så ring BBS (08-85 92 00). Ingen annan slutsåld stol har kommit tillbaka, och Yllws Mereo 220 och Kinnarps Y-stol är fortfarande reserverade. Ingen ny stol som passar och ingen ny begagnad 24/7-stol under 10 000 kr hittades; alla RH Logic 400 Elite hos BBS har 0 i lager. RH Extend 220 hos Rekomo är fortfarande förbeställning med väntad leverans vecka 48. CDON-sidorna, RP:s Gesture-sida och Rekomos Logic 400 med nya armstöd gick inte att läsa i dag; där gäller uppgifterna från tidigare koll. Rafz visar fortfarande inte pris och lager utan att man väljer variant, så ring Rafz (08-800 100). Yllw visar ofta ett andra, högre pris utan etikett (ca 1,43 gånger exkl.-priset); här används exkl.-priset gånger 1,25, så bekräfta slutpris och frakt till Stockholm med Yllw (010-209 09 03). Nackstöd enligt butikernas produktbeskrivningar och Rekomos lista \"Produkter som ingår\". Nypriser är butikens egna jämförpriser där de finns, annars utelämnade.",
  "IN": [
   {
@@ -32,22 +32,6 @@
    "neck": "opt",
    "neckNote": "+1 868 kr, passform oklar",
    "why": "Slut sedan 21 nov kl. 17.45. Extend med armstöd men utan nackstöd. Sidan kallar ryggen låg, så fråga Rekomo om rygghöjd och om nackstödet passar."
-  },
-  {
-   "name": "RH Extend med armstöd",
-   "url": "https://www.rekomo.se/produkt/kontorsstol-extend-11169-2681/",
-   "store": "Rekomo",
-   "stock": "1 i lager",
-   "state": "few",
-   "tier": "Bra",
-   "value": 4,
-   "price": 4188,
-   "note": "3 350 exkl. moms · skick 4/5",
-   "back": "pad",
-   "tall": true,
-   "neck": "opt",
-   "neckNote": "+1 868 kr",
-   "why": "Slut sedan 21 nov. Extend med armstöd, nackstöd kan köpas till."
   },
   {
    "name": "RH Extend med arm- och nackstöd",
@@ -204,7 +188,7 @@
    "name": "RH Extend 220, arm- och nackstöd",
    "url": "https://www.rekomo.se/produkt/kontorsstol-extend-220-37802/",
    "store": "Rekomo",
-   "stock": "104 i lager",
+   "stock": "103 i lager",
    "state": "in",
    "tier": "Premium",
    "value": 5,
@@ -503,22 +487,6 @@
    "tall": true,
    "neck": "yes",
    "why": "Ett exemplar kvar (två i morse). Kinnarps i svart tyg med nackstöd enligt Rekomos lista och hög rygg enligt bildtexten. Armstöd nämns inte, så fråga Rekomo."
-  },
-  {
-   "name": "RH Logic 400, blå, arm- och nackstöd",
-   "url": "https://www.rekomo.se/produkt/kontorsstol-logic-400-2228/",
-   "store": "Rekomo",
-   "stock": "1 i lager",
-   "state": "few",
-   "tier": "Mycket bra",
-   "value": 3,
-   "price": 8125,
-   "note": "6 500 exkl. moms · skick 4/5 · fri frakt över 5 000 exkl.",
-   "back": "pad",
-   "tall": true,
-   "neck": "opt",
-   "neckNote": "+1 130 kr om det saknas",
-   "why": "I lager igen sedan i går. Beskrivningen säger att nackstöd sitter på, men Rekomos lista över vad som ingår tar bara upp stol och armstöd. Med köpt Logic-nackstöd blir det cirka 9 260 kr med fri frakt."
   },
   {
    "name": "RH Logic 400, blå, nya armstöd",
@@ -864,6 +832,38 @@
   }
  ],
  "OUT": [
+  {
+   "name": "RH Logic 400, blå, arm- och nackstöd",
+   "url": "https://www.rekomo.se/produkt/kontorsstol-logic-400-2228/",
+   "store": "Rekomo",
+   "stock": "Slut",
+   "state": "out",
+   "tier": "Mycket bra",
+   "value": 3,
+   "price": 8125,
+   "note": "6 500 exkl. moms · skick 4/5 · fri frakt över 5 000 exkl.",
+   "back": "pad",
+   "tall": true,
+   "neck": "opt",
+   "neckNote": "+1 130 kr om det saknas",
+   "why": "I lager igen sedan i går. Beskrivningen säger att nackstöd sitter på, men Rekomos lista över vad som ingår tar bara upp stol och armstöd. Med köpt Logic-nackstöd blir det cirka 9 260 kr med fri frakt."
+  },
+  {
+   "name": "RH Extend med armstöd",
+   "url": "https://www.rekomo.se/produkt/kontorsstol-extend-11169-2681/",
+   "store": "Rekomo",
+   "stock": "Slut",
+   "state": "out",
+   "tier": "Bra",
+   "value": 4,
+   "price": 4188,
+   "note": "3 350 exkl. moms · skick 4/5",
+   "back": "pad",
+   "tall": true,
+   "neck": "opt",
+   "neckNote": "+1 868 kr",
+   "why": "Slut sedan 21 nov. Extend med armstöd, nackstöd kan köpas till."
+  },
   {
    "name": "RH Logic 400, hög rygg, nackstöd (svart/grön)",
    "url": "https://factory.yllw.com/en/rh/kontorsstol-logic-400-hog-rygg-9",
@@ -1787,5 +1787,5 @@
    "store": "BBS"
   }
  ],
- "autoChecked": "2026-11-24T17:00:02.178Z"
+ "autoChecked": "2026-11-25T07:45:02.653Z"
 }
