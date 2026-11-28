@@ -181,7 +181,8 @@
   "why": "Kinnarps 9000 med 3D-nackstöd, men dyrare än samma stol i Norsborg.",
   "cond": "good",
   "condSrc": "text",
-  "condNote": "säljaren: mycket fint, servad"
+  "condNote": "säljaren: mycket fint, servad",
+  "img": "aaec846f3a9c90f2a2c9712db113456d"
  },
  "f40a90972": {
   "approx": false,
@@ -295,7 +296,8 @@
   "cond": "good",
   "condSrc": "text",
   "condNote": "säljaren: varsamt använd",
-  "h24m": true
+  "h24m": true,
+  "img": "b2b915ee88d5d7a842b8074d2d600ac0"
  },
  "f5a4fe9d7": {
   "approx": false,
@@ -339,7 +341,8 @@
   "why": "Mycket billig Malmstolen 4000 med hög rygg. Kolla på bilderna om nackstöd finns.",
   "cond": "worn",
   "condSrc": "text",
-  "condNote": "säljaren: tyget är slitet"
+  "condNote": "säljaren: tyget är slitet",
+  "img": "e0301dbc35c39559386d1a5ca40d4e48"
  },
  "f5f86d7f0": {
   "approx": false,
@@ -381,7 +384,8 @@
   "value": 5,
   "why": "Logic 4 med nackstöd och luftsvank till mycket lågt pris. Klädseln är blåmönstrad.",
   "cond": "unk",
-  "h24m": true
+  "h24m": true,
+  "img": "8a286a783f6f90547594453d827217b5"
  },
  "f6f8b392b": {
   "approx": false,
@@ -426,7 +430,8 @@
   "cond": "good",
   "condSrc": "text",
   "condNote": "säljaren: varsamt använd",
-  "h24m": true
+  "h24m": true,
+  "img": "6b52dfc9bc38f68d4c2af512925dafc9"
  },
  "f77fde1ce": {
   "approx": false,
@@ -540,7 +545,8 @@
   "why": "Kinnarps 9000 med helt ny klädsel och nackstöd.",
   "cond": "new",
   "condSrc": "text",
-  "condNote": "säljaren: helt ny klädsel"
+  "condNote": "säljaren: helt ny klädsel",
+  "img": "bddae71adc7321af40bad687654f8b83"
  },
  "fabd6756e": {
   "approx": false,
@@ -583,7 +589,8 @@
   "why": "Kinnarps 9000 med 3D-nackstöd och nya armstöd. Samma säljare verkar ha flera Kinnarps och Logic 400 i Tumba och Norsborg.",
   "cond": "good",
   "condSrc": "text",
-  "condNote": "säljaren: fullservad"
+  "condNote": "säljaren: fullservad",
+  "img": "e0a81c282defc80d9b3cf3dfd29f709a"
  },
  "fc89cb92": {
   "approx": false,
@@ -712,7 +719,8 @@
   "neckNote": "",
   "why": "Stoppad hög rygg och nackstöd syns på bilden, för 400 kr att hämta i Stockholm. Modellvarianten (120/220) anges inte.",
   "checked": "2026-11-28",
-  "photoUrl": "https://img.tradera.net/medium-3-2/638/665587638_a0816236-7999-4693-8e2f-83fc4ba7b3cf.jpg"
+  "photoUrl": "https://img.tradera.net/medium-3-2/638/665587638_a0816236-7999-4693-8e2f-83fc4ba7b3cf.jpg",
+  "img": "1d2f68f3d3d82be3b56dc259b0ff2930"
  },
  "fc0cf28d4": {
   "name": "Kinnarps 9000 ComfortControl med nackstöd",
@@ -731,7 +739,8 @@
   "neckNote": "justerbart N1-nackstöd",
   "why": "Hög stoppad rygg, justerbart nackstöd, sittdjup, svankstöd och TechnoGel-armstöd för 1 900 kr i Stockholm.",
   "checked": "2026-11-28",
-  "photoUrl": "https://images.blocketcdn.se/dynamic/1280w/item/28575915/24b779ac-f9f7-4ccb-90ed-8088df78912a"
+  "photoUrl": "https://images.blocketcdn.se/dynamic/1280w/item/28575915/24b779ac-f9f7-4ccb-90ed-8088df78912a",
+  "img": "fff8b194582a0b2196421edb57825a52"
  },
  "f774bf9f5": {
   "name": "Kinnarps 8000 med nackstöd (2 st)",
@@ -750,6 +759,7 @@
   "neckNote": "nackstöd syns på bilden",
   "why": "Två svarta Kinnarps 8000 med hög stoppad rygg, nackstöd och armstöd. Exakt plats i Stockholm anges inte.",
   "checked": "2026-11-28",
-  "photoUrl": "https://scontent.fbma5-1.fna.fbcdn.net/v/t39.84726-6/927598882_1409589864583825_7417644235069177722_n.jpg?stp=c0.43.261.261a_dst-jpg_p261x260_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=92e707&_nc_ohc=a4g4B7iFp_8Q7kNvwGpbbmD&_nc_oc=Ado0DVJZCGQbG3o4SXAydE4Q3u7IyfCtMguCWglVIllRSFMyCHB4xuqy1-3SzJEmmn4&_nc_zt=14&_nc_ht=scontent.fbma5-1.fna&_nc_gid=iJerQFJL1pV-Z5wcBB_rPg&_nc_ss=7b3a8&oh=00_AQXo8aHGtBDkDkNp3WBdvW0NsSIcUy2JCJ4emNria5AV8w&oe=6B109F03"
+  "photoUrl": "https://scontent.fbma5-1.fna.fbcdn.net/v/t39.84726-6/927598882_1409589864583825_7417644235069177722_n.jpg?stp=c0.43.261.261a_dst-jpg_p261x260_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=92e707&_nc_ohc=a4g4B7iFp_8Q7kNvwGpbbmD&_nc_oc=Ado0DVJZCGQbG3o4SXAydE4Q3u7IyfCtMguCWglVIllRSFMyCHB4xuqy1-3SzJEmmn4&_nc_zt=14&_nc_ht=scontent.fbma5-1.fna&_nc_gid=iJerQFJL1pV-Z5wcBB_rPg&_nc_ss=7b3a8&oh=00_AQXo8aHGtBDkDkNp3WBdvW0NsSIcUy2JCJ4emNria5AV8w&oe=6B109F03",
+  "img": "76fa0812feadd7888fe3bb5795df086c"
  }
 }
