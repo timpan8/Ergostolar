@@ -42,8 +42,21 @@ Utgå från `data/chairs.json` (`IN` = går att köpa, `UNV` = ej verifierat, `O
 - Sidor datorn inte kunde läsa och raderna under `granska`: kolla dem och rätta pris/lager/flytta.
 - Fält per stol: name, url, store, stock, state (in/few/unv/out), tier (Premium/Mycket bra/Bra/Specialfall), value (1–5),
   price (heltal kr INKL moms), approx, note, back (pad/mesh/saddle), tall, neck (yes/opt/no/unk), neckNote, why, h24 (bara om
-  24/7-klassad), newPrice. Behåll modellnamnet i name. Inga påhittade data – hellre "unk"/"Ej verifierat".
-  Moms: Rekomo, RP, Rafz, AKIAB och Yllw visar exkl. moms → ×1,25.
+  24/7-klassad), newPrice, cond, condSrc, condNote (se Skick nedan). Behåll modellnamnet i name. Inga påhittade data – hellre
+  "unk"/"Ej verifierat". Moms: Rekomo, RP, Rafz, AKIAB och Yllw visar exkl. moms → ×1,25.
+- **Skick** (sidan har ett filter på det): bedöm varje stol i `IN` och `UNV` och varje fynd som saknar `cond`, och gör om
+  bedömningen om säljarens text eller fotot ändrats. Bedömda stolar behåller sitt `cond` mellan körningarna.
+  - `cond`: `new` (som ny: säljaren skriver nyskick/som ny/oanvänd/ny klädsel, eller fotot visar en stol utan synligt slitage),
+    `good` (normalt begagnat skick, små bruksspår), `worn` (sliten: säljaren nämner slitage, fläckar, hål, nött eller nedsutten
+    stoppning, skick C/"med anmärkning", eller fotot visar det), `unk` (går inte att avgöra).
+  - Läs säljarens text först: butikernas skicksgrad (t.ex. Rekomo/Offeco A/B/C, "gott begagnat skick") och annonsens beskrivning.
+  - Titta sedan på fotot: `img/<id>.jpg` där id står i `data/photos.json` (nyckel = stolens url utan avslutande /), eller `img`/
+    `photoUrl` för fynd. Öppna bilden med Read. Leta efter nött eller blank klädsel på sitsens framkant och armstöden, fläckar,
+    noppor, sprickor i plast, skavd fot och nedsjunken sits. Säger texten inget, bedöm från fotot. Visar fotot tydligt slitage
+    som texten inte nämner: välj `worn` – fotot väger tyngst. Är fotot en katalogbild (samma bild för flera exemplar, vit
+    studiobakgrund utan detaljer) säger det inget om skicket.
+  - `condSrc`: `text`, `foto` eller `båda`. `condNote`: högst 60 tecken, t.ex. "nött sits och armstöd" eller "säljaren: skick A".
+  - Välj inte en stol med `cond: "worn"` som toppval om det finns ett likvärdigt alternativ i bättre skick.
 - `PICKS`: tre bästa köpen för Tim enligt kraven och omdömena, med frakt. Format:
   `{ "label", "name", "store" (början av butiksnamnet), "price"?, "priceNote"?, "text", "where" }` – name+store måste matcha en stol i IN.
 - `eyebrow`: behåll texten, datorn uppdaterar "kollat …". `footer`: 3–6 meningar om vad som ändrats sedan förra kollen.
@@ -64,7 +77,7 @@ Utgå från `data/chairs.json` (`IN` = går att köpa, `UNV` = ej verifierat, `O
 Extend, Kinnarps 8000/Plus/9000, Savo XO, HÅG H09, Malmstolen, Steelcase Leap, samt "24/7", "kontrollrumsstol").
 
 Fynd från alla marknadsplatser: ta bara med annonser du bedömt, högst 10 fynd, bästa först. Lägg dem som `inbox\finds.json`:
-`{ "<url>": { name, url, store, stock, state, tier, value, price, note, back, tall, neck, neckNote, why, checked (ÅÅÅÅ-MM-DD), photoUrl, h24?, newPrice? } }`.
+`{ "<url>": { name, url, store, stock, state, tier, value, price, note, back, tall, neck, neckNote, why, checked (ÅÅÅÅ-MM-DD), photoUrl, cond, condSrc, condNote, h24?, newPrice? } }`.
 Såld annons: samma url med `"state": "out"`. Ska bort helt: `{ "<url>": { "remove": true } }`. Blocket sköts av datorn.
 
 ## 4. Avisering

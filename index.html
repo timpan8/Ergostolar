@@ -111,6 +111,10 @@ h2 { font-family: var(--f-display); font-stretch: 85%; font-weight: 700; font-si
 .h24 { background: var(--warn-soft); color: var(--warn); }
 .src { background: var(--ink); color: var(--surface); letter-spacing: .02em; }
 .like { background: var(--ok-soft); color: var(--ok); }
+.c-new { background: var(--ok-soft); color: var(--ok); border-color: var(--ok); }
+.c-good { background: var(--surface); color: var(--muted); border-color: var(--line); }
+.c-worn { background: var(--warn-soft); color: var(--warn); border-color: var(--warn); }
+.c-unk { background: transparent; color: var(--muted); border: 1px dashed var(--line); font-weight: 500; }
 .price small.np { color: var(--muted); }
 .sort-note { margin: 0; font-size: 13.5px; color: var(--accent); font-weight: 600; }
 .sort-note:empty { display: none; }
@@ -252,6 +256,14 @@ html.inbaddad .wrap { max-width: none; }
         </div>
       </div>
       <div class="ctl">
+        <span class="ctl-label" id="cond-l">Skick</span>
+        <div class="seg" role="group" aria-labelledby="cond-l">
+          <button type="button" id="c-all" aria-pressed="true">Alla</button>
+          <button type="button" id="c-ok" aria-pressed="false">Dölj slitna</button>
+          <button type="button" id="c-new" aria-pressed="false">Som ny</button>
+        </div>
+      </div>
+      <div class="ctl">
         <span class="ctl-label" id="brand-l">Tillverkare</span>
         <div class="seg" role="group" aria-labelledby="brand-l" id="brands"></div>
       </div>
@@ -369,12 +381,21 @@ html.inbaddad .wrap { max-width: none; }
     var n = NECK[it.neck];
     return '<span class="chip ' + n[0] + '">' + n[1] + (it.neckNote ? " " + esc(it.neckNote) : "") + "</span>";
   }
+  // Skick: Claude-uppgiften bedömer det från säljarens text och fotot. cond: new | good | worn | unk, condSrc: text | foto | båda.
+  var COND = { new: ["c-new", "Som ny"], good: ["c-good", "Gott skick"], worn: ["c-worn", "Sliten"], unk: ["c-unk", "Skick ej bedömt"] };
+  var CSRC = { text: "enligt säljaren", foto: "bedömt från foto", "båda": "säljarens text och foto" };
+  function condOf(it) { return COND[it.cond] ? it.cond : "unk"; }
+  function condChip(it) {
+    var c = condOf(it), t = COND[c][1] + (it.condNote ? ": " + it.condNote : "");
+    var tip = c === "unk" ? "Skicket är inte bedömt än" : COND[c][1] + (CSRC[it.condSrc] ? " (" + CSRC[it.condSrc] + ")" : "") + (it.condNote ? ". " + it.condNote : "");
+    return '<span class="chip ' + COND[c][0] + '" title="' + esc(tip) + '">' + esc(t) + "</span>";
+  }
   function row(it, i, dim) {
     return '<article class="row' + (dim ? " dim" : "") + (VOTE[mkey(it)] === -1 ? " nope" : "") + '"' + (it._key ? ' data-key="' + esc(it._key) + '"' : "") + ">" +
       '<div class="rank num">' + (i + 1) + "</div>" +
       pic(it) +
       '<div class="main"><div class="name"><a href="' + esc(it.url) + '" target="_blank" rel="noopener">' + esc(it.name) + "</a></div>" +
-      '<div class="meta"><span class="chip src">' + esc(site(it.url)) + "</span>" + (VOTE[mkey(it)] === 1 ? '<span class="chip like">Du gillar modellen</span>' : "") + (fits(it) ? '<span class="chip fit">Passar dig</span>' : "") + (it.h24 ? '<span class="chip h24">24/7</span>' : "") + neckChip(it) + '<span class="chip ' + stClass[it.state] + '">' + esc(it.stock) + "</span><span>" + esc(it.store) + "</span></div>" +
+      '<div class="meta"><span class="chip src">' + esc(site(it.url)) + "</span>" + (VOTE[mkey(it)] === 1 ? '<span class="chip like">Du gillar modellen</span>' : "") + (fits(it) ? '<span class="chip fit">Passar dig</span>' : "") + (it.h24 ? '<span class="chip h24">24/7</span>' : "") + neckChip(it) + condChip(it) + '<span class="chip ' + stClass[it.state] + '">' + esc(it.stock) + "</span><span>" + esc(it.store) + "</span></div>" +
       (it.why ? '<p class="why">' + esc(it.why) + "</p>" : "") + "</div>" +
       '<div class="tier"><span class="t">' + esc(it.tier) + "</span>" + meter(it.value) + '<span class="meter-cap">Prisvärdhet ' + it.value + "/5</span></div>" +
       '<div class="price"><strong>' + (it.approx ? "ca " : "") + fmt(it.price) + "</strong><small>" + esc(it.note) + "</small>" + npLine(it) + voteBtns(it) + "</div>" +
@@ -451,6 +472,8 @@ html.inbaddad .wrap { max-width: none; }
   function fits(x) { return x.back === "pad" && x.tall !== false && (x.neck === "yes" || x.neck === "opt"); }
   function pass(x) {
     if (brandF && brand(x) !== brandF) return false;
+    if (condF === "ok" && condOf(x) === "worn") return false;
+    if (condF === "new" && condOf(x) !== "new") return false;
     if (filter === "fit") return fits(x);
     if (filter === "neck") return x.neck === "yes" || x.neck === "opt";
     if (filter === "prem") return x.tier === "Premium";
@@ -516,8 +539,12 @@ html.inbaddad .wrap { max-width: none; }
   F.forEach(function (p) {
     document.getElementById(p[0]).addEventListener("click", function () { filter = p[1]; press(F.map(function (f) { return f[0]; }), p[0]); render(); });
   });
+  var condF = "all", CF = [["c-all", "all"], ["c-ok", "ok"], ["c-new", "new"]];
+  CF.forEach(function (p) {
+    document.getElementById(p[0]).addEventListener("click", function () { condF = p[1]; press(CF.map(function (f) { return f[0]; }), p[0]); render(); });
+  });
   var WEB = [];
-  var ST = { in: 1, few: 1, unv: 1, out: 1 }, BK = { pad: 1, mesh: 1, saddle: 1 }, NK = { yes: 1, opt: 1, no: 1, unk: 1 }, TI = { "Premium": 1, "Mycket bra": 1, "Bra": 1, "Specialfall": 1 };
+  var ST ={ in: 1, few: 1, unv: 1, out: 1 }, BK = { pad: 1, mesh: 1, saddle: 1 }, NK = { yes: 1, opt: 1, no: 1, unk: 1 }, TI = { "Premium": 1, "Mycket bra": 1, "Bra": 1, "Specialfall": 1 };
   function cleanUrl(u) { return String(u || "").trim().replace(/#.*$/, "").replace(/\/+$/, ""); }
   function keyOf(u) { var h = 2166136261; for (var i = 0; i < u.length; i++) { h ^= u.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; } return "f" + h.toString(16); }
   function str(v, max) { return typeof v === "string" ? v.trim().slice(0, max) : ""; }
@@ -539,6 +566,7 @@ html.inbaddad .wrap { max-width: none; }
       checked: /^\d{4}-\d{2}-\d{2}$/.test(r.checked) ? r.checked : new Date().toISOString().slice(0, 10),
       photoUrl: /^https:\/\/\S+$/i.test(str(r.photoUrl, 500)) ? str(r.photoUrl, 500) : "",
       h24: r.h24 === true,
+      cond: COND[r.cond] ? r.cond : "unk", condSrc: CSRC[r.condSrc] ? r.condSrc : "", condNote: str(r.condNote, 60),
       newPrice: Number(r.newPrice) > 0 && Number(r.newPrice) < 200000 ? Math.round(Number(r.newPrice)) : 0,
       thumb: typeof r.thumb === "string" && r.thumb.length < 90000 && /^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+\/=]+$/.test(r.thumb) ? r.thumb : ""
     };

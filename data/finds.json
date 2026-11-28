@@ -17,7 +17,10 @@
   "tier": "Premium",
   "url": "https://cdon.se/produkt/steelcase-leap-v2-svart-311ae481c79d4c59",
   "value": 3,
-  "why": "Finns kvar. Toppergonomi men inget nackstöd; med köpt nackstöd över 10 000 kr."
+  "why": "Finns kvar. Toppergonomi men inget nackstöd; med köpt nackstöd över 10 000 kr.",
+  "cond": "new",
+  "condSrc": "text",
+  "condNote": "Offeco: skick A"
  },
  "f208ce8f5": {
   "approx": false,
@@ -37,7 +40,10 @@
   "tier": "Mycket bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/25428862",
   "value": 4,
-  "why": "Large-modellen med justerbart nackstöd och sittdjup. Bra för 180+ cm."
+  "why": "Large-modellen med justerbart nackstöd och sittdjup. Bra för 180+ cm.",
+  "cond": "new",
+  "condSrc": "båda",
+  "condNote": "säljaren: som ny"
  },
  "f2096e221": {
   "approx": false,
@@ -57,7 +63,10 @@
   "tier": "Mycket bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/27868455",
   "value": 3,
-  "why": "Nackstöd syns på bilden, men det är enda bilden och den ser ut som en stockbild. Be om riktiga foton."
+  "why": "Nackstöd syns på bilden, men det är enda bilden och den ser ut som en stockbild. Be om riktiga foton.",
+  "cond": "new",
+  "condSrc": "text",
+  "condNote": "säljaren: ny klädsel (stockbild)"
  },
  "f248bd4": {
   "approx": false,
@@ -77,7 +86,10 @@
   "tier": "Mycket bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/26335168",
   "value": 5,
-  "why": "Billigaste Logic 400 med nackstöd. Svart tyg, löstagbara arm- och nackstöd syns på bilderna."
+  "why": "Billigaste Logic 400 med nackstöd. Svart tyg, löstagbara arm- och nackstöd syns på bilderna.",
+  "cond": "good",
+  "condSrc": "båda",
+  "condNote": "säljaren: varsamt använd"
  },
  "f2ed8796a": {
   "approx": false,
@@ -97,7 +109,10 @@
   "tier": "Mycket bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/23956113",
   "value": 3,
-  "why": "Nyklädd och servad, men dyr jämfört med Skogås-stolen. Troligen samma säljare som Logic 400-annonserna i Södertälje."
+  "why": "Nyklädd och servad, men dyr jämfört med Skogås-stolen. Troligen samma säljare som Logic 400-annonserna i Södertälje.",
+  "cond": "new",
+  "condSrc": "text",
+  "condNote": "säljaren: helt ny, ny klädsel"
  },
  "f332b2400": {
   "approx": false,
@@ -118,7 +133,10 @@
   "tier": "Mycket bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/27182507",
   "value": 5,
-  "why": "Hög stoppad rygg med nackstöd för en tredjedel av Rekomos pris. Enda nackdelen är kosmetiskt slitna armstöd."
+  "why": "Hög stoppad rygg med nackstöd för en tredjedel av Rekomos pris. Enda nackdelen är kosmetiskt slitna armstöd.",
+  "cond": "good",
+  "condSrc": "text",
+  "condNote": "slitage på armstöden"
  },
  "f3ccc11a0": {
   "approx": true,
@@ -138,7 +156,10 @@
   "tier": "Mycket bra",
   "url": "https://www.facebook.com/marketplace/item/39708180668797040",
   "value": 5,
-  "why": "Mereo 220 med nackstöd och armstöd i mycket bra skick. Priset stiger säkert, men BBS tar 8 119 kr för samma modell."
+  "why": "Mereo 220 med nackstöd och armstöd i mycket bra skick. Priset stiger säkert, men BBS tar 8 119 kr för samma modell.",
+  "cond": "good",
+  "condSrc": "båda",
+  "condNote": "säljaren: mycket bra skick"
  },
  "f3e699b81": {
   "back": "pad",
@@ -155,7 +176,10 @@
   "tier": "Premium",
   "url": "https://www.blocket.se/recommerce/forsale/item/28031920",
   "value": 3,
-  "why": "Kinnarps 9000 med 3D-nackstöd, men dyrare än samma stol i Norsborg."
+  "why": "Kinnarps 9000 med 3D-nackstöd, men dyrare än samma stol i Norsborg.",
+  "cond": "good",
+  "condSrc": "text",
+  "condNote": "säljaren: mycket fint, servad"
  },
  "f40a90972": {
   "approx": false,
@@ -175,7 +199,10 @@
   "tier": "Mycket bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/27253061",
   "value": 5,
-  "why": "Hög rygg, justerbart nackstöd i konstläder och armstöd. Rött mönstrat tyg."
+  "why": "Hög rygg, justerbart nackstöd i konstläder och armstöd. Rött mönstrat tyg.",
+  "cond": "new",
+  "condSrc": "båda",
+  "condNote": "säljaren: nyskick, hel och ren"
  },
  "f41093497": {
   "approx": false,
@@ -195,7 +222,10 @@
   "tier": "Premium",
   "url": "https://cdon.se/produkt/herman-miller-aeron-bla-ergonomisk-kontorsstol-599c202c17505a1e",
   "value": 4,
-  "why": "Finns kvar, storlek B. Mesh och inget nackstöd, så den passar inte dina krav."
+  "why": "Finns kvar, storlek B. Mesh och inget nackstöd, så den passar inte dina krav.",
+  "cond": "new",
+  "condSrc": "text",
+  "condNote": "Offeco: skick A"
  },
  "f436f8d60": {
   "approx": false,
@@ -215,7 +245,10 @@
   "tier": "Mycket bra",
   "url": "https://www.facebook.com/marketplace/item/1683761893322440",
   "value": 4,
-  "why": "Classic 4000 med hög rygg, nackstöd i konstläder och Dux-fjädrad sits. En annan säljare kallar 4000 godkänd för 24 timmar, men återförsäljaren skriver det inte."
+  "why": "Classic 4000 med hög rygg, nackstöd i konstläder och Dux-fjädrad sits. En annan säljare kallar 4000 godkänd för 24 timmar, men återförsäljaren skriver det inte.",
+  "cond": "worn",
+  "condSrc": "foto",
+  "condNote": "fläckar och noppor på sitsen"
  },
  "f4559f47a": {
   "approx": false,
@@ -235,7 +268,10 @@
   "tier": "Mycket bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/25905502",
   "value": 4,
-  "why": "Nyklädd och servad Logic 400 med nackstöd. Dyrare men nästan som renoverad från butik."
+  "why": "Nyklädd och servad Logic 400 med nackstöd. Dyrare men nästan som renoverad från butik.",
+  "cond": "new",
+  "condSrc": "båda",
+  "condNote": "ny klädsel, armstöd och gaskolv"
  },
  "f58a95d07": {
   "back": "pad",
@@ -252,7 +288,10 @@
   "tier": "Mycket bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/27940034",
   "value": 5,
-  "why": "Billigaste Logic 400 med nackstöd i Stockholm just nu, svart och med kontrollerade funktioner enligt annonsen."
+  "why": "Billigaste Logic 400 med nackstöd i Stockholm just nu, svart och med kontrollerade funktioner enligt annonsen.",
+  "cond": "good",
+  "condSrc": "text",
+  "condNote": "säljaren: varsamt använd"
  },
  "f5a4fe9d7": {
   "approx": false,
@@ -272,7 +311,10 @@
   "tier": "Mycket bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/17967524",
   "value": 4,
-  "why": "Logic 400 med nackstöd och armstöd. Fråga efter ett exemplar utan sliten dyna."
+  "why": "Logic 400 med nackstöd och armstöd. Fråga efter ett exemplar utan sliten dyna.",
+  "cond": "good",
+  "condSrc": "text",
+  "condNote": "vissa ex. har sliten sitskant"
  },
  "f5b3f38f0": {
   "back": "pad",
@@ -289,7 +331,10 @@
   "tier": "Bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/23804371",
   "value": 3,
-  "why": "Mycket billig Malmstolen 4000 med hög rygg. Kolla på bilderna om nackstöd finns."
+  "why": "Mycket billig Malmstolen 4000 med hög rygg. Kolla på bilderna om nackstöd finns.",
+  "cond": "worn",
+  "condSrc": "text",
+  "condNote": "säljaren: tyget är slitet"
  },
  "f5f86d7f0": {
   "approx": false,
@@ -309,7 +354,10 @@
   "tier": "Premium",
   "url": "https://www.facebook.com/marketplace/item/1700573481084476",
   "value": 4,
-  "why": "Kinnarps toppmodell med nackstöd, tio exemplar. Annonsen är 20 veckor gammal, så fråga om de finns kvar."
+  "why": "Kinnarps toppmodell med nackstöd, tio exemplar. Annonsen är 20 veckor gammal, så fråga om de finns kvar.",
+  "cond": "new",
+  "condSrc": "båda",
+  "condNote": "ny klädsel, servad"
  },
  "f664313ec": {
   "back": "pad",
@@ -326,7 +374,8 @@
   "tier": "Mycket bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/27592465",
   "value": 5,
-  "why": "Logic 4 med nackstöd och luftsvank till mycket lågt pris. Klädseln är blåmönstrad."
+  "why": "Logic 4 med nackstöd och luftsvank till mycket lågt pris. Klädseln är blåmönstrad.",
+  "cond": "unk"
  },
  "f6f8b392b": {
   "approx": false,
@@ -346,7 +395,10 @@
   "tier": "Mycket bra",
   "url": "https://www.rafz.se/product/kontorsstol-logic-400-rh-aterbrukade-kontorsmobler-rafz",
   "value": 4,
-  "why": "Varianten med nackstöd är slutsåld. Utan nackstöd finns 11 st; med Rekomos nackstöd ca 7 170 kr."
+  "why": "Varianten med nackstöd är slutsåld. Utan nackstöd finns 11 st; med Rekomos nackstöd ca 7 170 kr.",
+  "cond": "good",
+  "condSrc": "text",
+  "condNote": "Rafz: fint skick"
  },
  "f75870a3": {
   "back": "pad",
@@ -363,7 +415,10 @@
   "tier": "Mycket bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/28014769",
   "value": 5,
-  "why": "Logic 400 Komfort med arm- och nackstöd, upplagd för en vecka sedan."
+  "why": "Logic 400 Komfort med arm- och nackstöd, upplagd för en vecka sedan.",
+  "cond": "good",
+  "condSrc": "text",
+  "condNote": "säljaren: varsamt använd"
  },
  "f77fde1ce": {
   "approx": false,
@@ -383,7 +438,10 @@
   "tier": "Mycket bra",
   "url": "https://www.facebook.com/marketplace/item/27988718857480423",
   "value": 4,
-  "why": "Samma stol som Blocket-annonsen i Tyresö, men 905 kr billigare här. Sittdjup och nackstöd i höjd och vinkel."
+  "why": "Samma stol som Blocket-annonsen i Tyresö, men 905 kr billigare här. Sittdjup och nackstöd i höjd och vinkel.",
+  "cond": "good",
+  "condSrc": "text",
+  "condNote": "säljaren: små repor"
  },
  "f7ceda7d8": {
   "approx": false,
@@ -403,7 +461,10 @@
   "tier": "Bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/19375812",
   "value": 3,
-  "why": "Skinn med nackstöd och Tvedt-kudde. Skinn blir varmt under långa dagar."
+  "why": "Skinn med nackstöd och Tvedt-kudde. Skinn blir varmt under långa dagar.",
+  "cond": "good",
+  "condSrc": "båda",
+  "condNote": "säljaren: mycket bra skick"
  },
  "f7fd5192a": {
   "approx": false,
@@ -423,7 +484,10 @@
   "tier": "Mycket bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/26094140",
   "value": 4,
-  "why": "Företagssäljare med flera ex. Hög rygg, nackstöd, justerbart sittdjup och rygghöjd."
+  "why": "Företagssäljare med flera ex. Hög rygg, nackstöd, justerbart sittdjup och rygghöjd.",
+  "cond": "good",
+  "condSrc": "text",
+  "condNote": "gott begagnat skick"
  },
  "f854a6b18": {
   "approx": true,
@@ -444,7 +508,10 @@
   "tier": "Premium",
   "url": "https://www.tradera.com/item/160407/754722834/bevakningsstol-fran-kab-stolcomfort",
   "value": 5,
-  "why": "Äkta 24/7-stol för bevakningscentraler, nypris ca 20 000. Tyg med nackstöd i läder, mindre fläckar."
+  "why": "Äkta 24/7-stol för bevakningscentraler, nypris ca 20 000. Tyg med nackstöd i läder, mindre fläckar.",
+  "cond": "worn",
+  "condSrc": "båda",
+  "condNote": "fläckar på sitsen"
  },
  "f880f6580": {
   "back": "pad",
@@ -461,7 +528,10 @@
   "tier": "Premium",
   "url": "https://www.blocket.se/recommerce/forsale/item/27920402",
   "value": 4,
-  "why": "Kinnarps 9000 med helt ny klädsel och nackstöd."
+  "why": "Kinnarps 9000 med helt ny klädsel och nackstöd.",
+  "cond": "new",
+  "condSrc": "text",
+  "condNote": "säljaren: helt ny klädsel"
  },
  "fabd6756e": {
   "approx": false,
@@ -481,7 +551,10 @@
   "tier": "Premium",
   "url": "https://www.rafz.se/product/kontorsstol-excellence-h09-hag-aterbrukade-rafz",
   "value": 4,
-  "why": "6 i lager enligt Rafz i dag. Hög rygg men inget nackstöd."
+  "why": "6 i lager enligt Rafz i dag. Hög rygg men inget nackstöd.",
+  "cond": "good",
+  "condSrc": "text",
+  "condNote": "Rafz: fint skick"
  },
  "fc667678b": {
   "back": "pad",
@@ -498,7 +571,10 @@
   "tier": "Premium",
   "url": "https://www.blocket.se/recommerce/forsale/item/28057513",
   "value": 4,
-  "why": "Kinnarps 9000 med 3D-nackstöd och nya armstöd. Samma säljare verkar ha flera Kinnarps och Logic 400 i Tumba och Norsborg."
+  "why": "Kinnarps 9000 med 3D-nackstöd och nya armstöd. Samma säljare verkar ha flera Kinnarps och Logic 400 i Tumba och Norsborg.",
+  "cond": "good",
+  "condSrc": "text",
+  "condNote": "säljaren: fullservad"
  },
  "fc89cb92": {
   "approx": false,
@@ -518,7 +594,10 @@
   "tier": "Mycket bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/27867631",
   "value": 3,
-  "why": "Bilderna ser ut som stockbilder, precis som i Logic 400-annonsen från Tumba. Be om riktiga foton."
+  "why": "Bilderna ser ut som stockbilder, precis som i Logic 400-annonsen från Tumba. Be om riktiga foton.",
+  "cond": "new",
+  "condSrc": "text",
+  "condNote": "säljaren: ny klädsel (stockbild)"
  },
  "fd56a3500": {
   "approx": false,
@@ -538,7 +617,10 @@
   "tier": "Bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/27790119",
   "value": 4,
-  "why": "Hög stoppad rygg med nackstöd för 2 500 kr. Modellen står inte, så fråga om det är en 4000."
+  "why": "Hög stoppad rygg med nackstöd för 2 500 kr. Modellen står inte, så fråga om det är en 4000.",
+  "cond": "good",
+  "condSrc": "båda",
+  "condNote": "säljaren: bra skick"
  },
  "fee2a2dc5": {
   "approx": false,
@@ -558,7 +640,10 @@
   "tier": "Bra",
   "url": "https://www.facebook.com/marketplace/item/4276607342474039",
   "value": 4,
-  "why": "Svensk ergonomistol med hög rygg och justerbart nackstöd i blått tyg. Upplagd i går."
+  "why": "Svensk ergonomistol med hög rygg och justerbart nackstöd i blått tyg. Upplagd i går.",
+  "cond": "good",
+  "condSrc": "text",
+  "condNote": "gott skick, nytvättad klädsel"
  },
  "ff5588817": {
   "approx": false,
@@ -578,7 +663,10 @@
   "tier": "Mycket bra",
   "url": "https://www.facebook.com/marketplace/item/1559458088942091",
   "value": 4,
-  "why": "Nackstöd och armstöd syns på bilden. Kort annons som är 24 veckor gammal, så den kan vara såld."
+  "why": "Nackstöd och armstöd syns på bilden. Kort annons som är 24 veckor gammal, så den kan vara såld.",
+  "cond": "new",
+  "condSrc": "text",
+  "condNote": "säljaren: som ny"
  },
  "ff7a0da25": {
   "back": "pad",
@@ -595,6 +683,7 @@
   "tier": "Mycket bra",
   "url": "https://www.blocket.se/recommerce/forsale/item/25950844",
   "value": 4,
-  "why": "Kinnarps toppserie i svart med justerbara arm- och nackstöd."
+  "why": "Kinnarps toppserie i svart med justerbara arm- och nackstöd.",
+  "cond": "unk"
  }
 }
