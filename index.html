@@ -692,8 +692,23 @@ html.inbaddad .wrap { max-width: none; }
     var b = e.target && e.target.closest ? e.target.closest("button.thumb[data-src]") : null;
     if (!b) return;
     dlgImg.src = b.getAttribute("data-src"); dlgImg.alt = b.getAttribute("aria-label") || "";
-    if (dlg.showModal) dlg.showModal(); else window.open(dlgImg.src, "_blank", "noopener");
+    if (dlg.showModal) { placeDialog(); dlg.showModal(); } else window.open(dlgImg.src, "_blank", "noopener");
   });
+  // Inbäddad i Prisbevakning är ramen lika hög som hela listan, så en centrerad dialog hamnar utanför det man ser.
+  // Lägg den i den del av ramen som syns i föräldrafönstret (samma domän på GitHub Pages; annars vanlig centrering).
+  function placeDialog() {
+    var top = "", maxH = "";
+    try {
+      var fe = window.frameElement;
+      if (fe && window.parent !== window) {
+        var vh = window.parent.innerHeight, r = fe.getBoundingClientRect();
+        var visTop = Math.max(0, -r.top), visH = Math.min(vh, r.bottom) - Math.max(0, r.top);
+        if (visH > 0 && r.height > vh) { top = Math.round(visTop + 16) + "px"; maxH = Math.round(Math.min(vh, visH) * 0.8) + "px"; }
+      }
+    } catch (err) {}
+    dlg.style.margin = top ? "0 auto" : ""; dlg.style.top = top; dlg.style.bottom = top ? "auto" : "";
+    dlgImg.style.maxHeight = maxH;
+  }
   document.getElementById("photo-close").addEventListener("click", function () { dlg.close(); });
   dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
   document.addEventListener("error", function (e) {
