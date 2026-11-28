@@ -261,6 +261,7 @@ html.inbaddad .wrap { max-width: none; }
           <button type="button" id="c-all" aria-pressed="true">Alla</button>
           <button type="button" id="c-ok" aria-pressed="false">Dölj slitna</button>
           <button type="button" id="c-new" aria-pressed="false">Som ny</button>
+          <button type="button" id="c-worn" aria-pressed="false">Bara slitna</button>
         </div>
       </div>
       <div class="ctl">
@@ -474,6 +475,7 @@ html.inbaddad .wrap { max-width: none; }
     if (brandF && brand(x) !== brandF) return false;
     if (condF === "ok" && condOf(x) === "worn") return false;
     if (condF === "new" && condOf(x) !== "new") return false;
+    if (condF === "worn" && condOf(x) !== "worn") return false;
     if (filter === "fit") return fits(x);
     if (filter === "neck") return x.neck === "yes" || x.neck === "opt";
     if (filter === "prem") return x.tier === "Premium";
@@ -539,7 +541,7 @@ html.inbaddad .wrap { max-width: none; }
   F.forEach(function (p) {
     document.getElementById(p[0]).addEventListener("click", function () { filter = p[1]; press(F.map(function (f) { return f[0]; }), p[0]); render(); });
   });
-  var condF = "all", CF = [["c-all", "all"], ["c-ok", "ok"], ["c-new", "new"]];
+  var condF = "all", CF = [["c-all", "all"], ["c-ok", "ok"], ["c-new", "new"], ["c-worn", "worn"]];
   CF.forEach(function (p) {
     document.getElementById(p[0]).addEventListener("click", function () { condF = p[1]; press(CF.map(function (f) { return f[0]; }), p[0]); render(); });
   });
