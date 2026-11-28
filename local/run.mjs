@@ -11,16 +11,19 @@
 // 3. Nya kandidater från butikernas listsidor och Blocket (modeller enligt MODELS) – bara listade, Claude bedömer dem.
 // Resultat för Claude: JOB_OUT_DIR\senaste-kontroll.json och kandidater.json.
 
-import { readFile, writeFile, mkdir, readdir, rename } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, readdir, rename, rm } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import os from 'node:os';
-import { getText, ldObjects, Blocked, Gone, sharedBlocket } from './fetch.mjs';
+import { createHash } from 'node:crypto';
+import { getText, getBuffer, ldObjects, Blocked, Gone, sharedBlocket } from './fetch.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CHAIRS = path.join(ROOT, 'data', 'chairs.json');
 const FINDS = path.join(ROOT, 'data', 'finds.json');
+const PHOTOS = path.join(ROOT, 'data', 'photos.json');
+const IMG_DIR = path.join(ROOT, 'img');
 const OUT_DIR = process.env.JOB_OUT_DIR || path.join(os.tmpdir(), 'ergostolar-runs');
 const INBOX = process.env.ERGO_INBOX;
 const push = !process.argv.includes('--no-push');
@@ -69,8 +72,8 @@ async function applyInbox() {
 function keyOf(u) { let h = 2166136261; for (let i = 0; i < u.length; i++) { h ^= u.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; } return 'f' + h.toString(16); }
 
 async function publish(msg) {
-  git('add', 'data/chairs.json', 'data/finds.json');
-  if (!git('status', '--porcelain', 'data')) { log('Ingen ändring att publicera'); return; }
+  git('add', 'data/chairs.json', 'data/finds.json', 'data/photos.json', 'img');
+  if (!git('status', '--porcelain', 'data', 'img')) { log('Ingen ändring att publicera'); return; }
   git('commit', '-q', '-m', msg);
   try { git('push', '-q'); } catch { log('Push nekades, hämtar och försöker igen'); git('pull', '--rebase', '-q'); git('push', '-q'); }
   log('Publicerat');
@@ -102,6 +105,27 @@ function readOffer(html) {
   const count = m ? +m[1] : null;
   return { price: price > 0 ? price : null, vat, cur, avail, count };
 }
+// Produktbilden: ld+json Product.image (sträng, lista eller ImageObject), annars og:image
+function pagePhoto(html, base) {
+  const prod = ldObjects(html).find(j => /Product/.test([].concat(j['@type']).join(' ')));
+  let src = [].concat(prod?.image || []).map(x => typeof x === 'string' ? x : x?.url || x?.contentUrl).find(Boolean);
+  if (!src) src = (html.match(/<meta[^>]+property=["']og:image(?::secure_url)?["'][^>]*content=["']([^"']+)/i) || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]*property=["']og:image["']/i) || [])[1];
+  if (!src) return null;
+  try { const u = new URL(src.replace(/&amp;/g, '&'), base); return u.protocol === 'https:' || u.protocol === 'http:' ? u.href : null; } catch { return null; }
+}
+
+// Foto till stolar som saknar ett: hämtas, skalas ned till JPEG (local/resize.ps1) och läggs i img/ + data/photos.json
+async function savePhoto(it, src) {
+  const id = createHash('md5').update(cleanUrl(it.url)).digest('hex');
+  const tmp = path.join(os.tmpdir(), `ergo-${id}.bild`), dst = path.join(IMG_DIR, id + '.jpg');
+  await writeFile(tmp, await getBuffer(src));
+  try {
+    execFileSync('powershell', ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', path.join(ROOT, 'local', 'resize.ps1'), '-Src', tmp, '-Dst', dst], { stdio: ['ignore', 'pipe', 'pipe'], timeout: 60000 });
+  } catch (e) { throw new Error('bilden gick inte att läsa (' + (String(e.stderr || '').split('\n').map(l => l.trim()).find(l => l && !/^(At |\+|~|At line|CategoryInfo|FullyQualifiedErrorId)/.test(l) && !l.includes(ROOT)) || 'okänt fel').replace(/^Exception calling .*? with .*? argument\(s\): /, '').slice(0, 160) + ', ' + src + ')'); }
+  finally { await rm(tmp, { force: true }); }
+  return id;
+}
+
 const fmt = n => Math.round(n).toLocaleString('sv-SE').replace(/\s/g, ' ');
 const COUNT_OK = new Set(['rekomo.se', 'rp.se', 'kontorsmobler.se']);
 
@@ -121,10 +145,11 @@ async function check(it) {
     return null;
   }
   const r = readOffer(html);
+  const photoSrc = pagePhoto(html, it.url);
   // Lagersiffror i sidans text gäller bara där de visat sig höra till själva stolen (andra butiker listar fler stolar på sidan)
   const host = new URL(it.url).host.replace(/^www\./, '');
   if (!COUNT_OK.has(host) || (r.count === 0 && r.avail === 'InStock')) r.count = null;
-  const res = {};
+  const res = { photoSrc };
   // Lager
   if (r.avail === 'OutOfStock' || r.avail === 'SoldOut' || r.count === 0) { res.state = 'out'; res.stock = 'Slut'; }
   else if (r.avail === 'PreOrder' || r.avail === 'BackOrder') { res.state = 'in'; res.stock = it.stock && /förbeställ/i.test(it.stock) ? it.stock : 'Förbeställning'; }
@@ -159,7 +184,9 @@ function apply(it, res, list) {
 }
 
 if (process.env.ERGO_SKIP_CHECK !== '1') {
-  const moves = [];
+  const moves = [], needPhoto = [];
+  let photos = {}; try { photos = JSON.parse(await readFile(PHOTOS, 'utf8')); } catch {}
+  const hasPhoto = new Set(Object.keys(photos).map(cleanUrl));
   const all = [...ch.IN.map(x => ['IN', x]), ...ch.UNV.map(x => ['UNV', x]), ...ch.OUT.map(x => ['OUT', x])];
   // Alla sajter parallellt, en förfrågan i taget per sajt (fetch.mjs håller pausen)
   await Promise.all(all.map(async ([list, it]) => {
@@ -167,8 +194,20 @@ if (process.env.ERGO_SKIP_CHECK !== '1') {
     if (!res) return;
     const to = apply(it, res, list);
     if (to !== list) moves.push([it, list, to]);
+    if (to !== 'OUT' && res.photoSrc && !hasPhoto.has(cleanUrl(it.url))) needPhoto.push([it, res.photoSrc]);
   }));
   for (const [it, from, to] of moves) { ch[from] = ch[from].filter(x => x !== it); ch[to].unshift(it); }
+  // Foton till stolar i Går att köpa / Ej verifierade som saknar ett (slutsålda hoppas över)
+  if (needPhoto.length) {
+    await mkdir(IMG_DIR, { recursive: true });
+    report.foton = [];
+    await Promise.all(needPhoto.map(async ([it, src]) => {
+      try { photos[cleanUrl(it.url)] = await savePhoto(it, src); report.foton.push(it.name); }
+      catch (e) { report.granska.push(`${it.name}: fotot gick inte att hämta – ${e.message}`); }
+    }));
+    await writeFile(PHOTOS, JSON.stringify(photos, null, 1) + '\n');
+    log(`Foton: ${report.foton.length} av ${needPhoto.length} nya hämtade`);
+  }
   ch.eyebrow = String(ch.eyebrow || '').replace(/kollat[^·]*$/, `kollat ${svDate}, ca ${svTime}`);
   ch.autoChecked = now.toISOString();
   await writeFile(CHAIRS, JSON.stringify(ch, null, 1) + '\n');

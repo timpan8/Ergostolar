@@ -43,6 +43,15 @@ export async function getText(url) {
   throw new Error('svarade inte');
 }
 
+// Hämtar en fil (t.ex. en bild) som Buffer. Gone = 404/410/403 (utgången bildlänk).
+export async function getBuffer(url) {
+  if (SHARED) return SHARED.getBuffer(url);
+  const r = await throttled(new URL(url).host, () => fetch(url, { headers: { 'User-Agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(30000) }));
+  if (r.status === 404 || r.status === 410 || r.status === 403) throw new Gone(String(r.status));
+  if (!r.ok) throw new Error(`svarade ${r.status}`);
+  return Buffer.from(await r.arrayBuffer());
+}
+
 // Alla ld+json-objekt på sidan (även @graph)
 export function ldObjects(html) {
   return [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)]

@@ -1,7 +1,7 @@
 # Claude-uppgiften för Ergostolar
 
 Uppgiften körs 08:10 och 18:10. **Datorn hämtar själv** (07:40, 11:40, 17:40, `local/run.mjs` via jobbköraren i
-`C:\Users\TimLi\Dev\Automation`): pris och lager på varje stol i listan, och nya kandidater från Rekomo, BBS, RP, Relovie och
+`C:\Users\TimLi\Dev\Automation`): pris och lager på varje stol i listan, produktfoto till stolar som saknar ett, och nya kandidater från Rekomo, BBS, RP, Relovie och
 Blocket. Uppgiften gör det som kräver omdöme eller en riktig webbläsare. Skriv allt på svenska.
 
 **Arbetsmapp:** `C:\Users\TimLi\Dev\Ergostolar`. Börja med `git pull --rebase --autostash`.
@@ -29,7 +29,8 @@ exemplar av ogillade och välj dem inte som toppval. Ändra aldrig i votes.json 
 
 ## 1. Läs datorns resultat
 - `C:\Users\TimLi\Dev\Automation\output\ergostolar\senaste-kontroll.json`: `andrade` (prisändringar), `slut` (flyttade till
-  Slutsålt), `tillbaka` (i lager igen), `granska` (stora prishopp eller sidor som saknas – kontrollera dem), `olasta`
+  Slutsålt), `tillbaka` (i lager igen), `granska` (stora prishopp, sidor som saknas eller foton som inte gick att hämta – kontrollera dem), `foton` (stolar som
+  fått foto), `olasta`
   (sidor datorn inte kunde läsa, t.ex. CDON med botspärr – kolla dem själv).
 - `...\output\ergostolar\kandidater.json`: nya stolar av bevakade modeller som inte finns i listan. Bedöm dem (steg 2).
 - Dagens logg: `C:\Users\TimLi\Dev\Automation\logs\ergostolar\`.
