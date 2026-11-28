@@ -20,8 +20,12 @@ Butiker med `hamtning: "dator"` hämtas redan av datorns jobb.
 - Bor i Stockholm, behöver inte provsitta. Butiker som skickar till Stockholm (hela Sverige, eller EU om totalen med frakt ryms)
   är lika bra. Stolar som bara kan hämtas ska hämtas i Stockholmsområdet, annars tas de bort.
 - Långa arbetsdagar, 170–185 cm, inga besvär. STOPPAD rygg och sits (inte mesh), HÖG rygg och NACKSTÖD (monterat eller tillval).
-- Begagnat/renoverat från seriösa aktörer, gärna med garanti/öppet köp. Håll också koll på prisvärda 24/7-stolar
-  (t.ex. RH Logic 400 Elite 24/7) inom samma budget.
+- Begagnat/renoverat från seriösa aktörer, gärna med garanti/öppet köp. Tim vill ha riktiga ergonomistolar av hög kvalitet
+  för heldagar, och särskilt 24/7-stolar (kontrollrum, bevakning, operatörsplatser).
+- **24/7-stolar får kosta upp till 14 000 kr inkl. moms och frakt.** De läggs i `IN`/`UNV` som vanligt; sidan visar allt över
+  10 000 kr i en egen grupp "24/7-stolar strax över budget". Andra stolar ska fortfarande ligga under 10 000 kr.
+- Okänt är inte nej: saknar annonsen uppgift om nackstöd eller rygghöjd, sätt `neck: "unk"` / utelämna `tall` och ta med stolen.
+  Sidan visar den med märket "Nackstöd okänt – kolla". Ta bara bort den om det framgår att den saknar det.
 
 ## Tims omdömen
 `data/votes.json`: `{ "<modellnyckel>": { "model": "...", "vote": 1 | -1 } }`. Prioritera gillade modeller, lägg inte till nya
@@ -41,8 +45,8 @@ Utgå från `data/chairs.json` (`IN` = går att köpa, `UNV` = ej verifierat, `O
   Lägg verifierade som passar budgeten i `IN`, osäkra i `UNV`. Max ca 10–15 sidor per körning.
 - Sidor datorn inte kunde läsa och raderna under `granska`: kolla dem och rätta pris/lager/flytta.
 - Fält per stol: name, url, store, stock, state (in/few/unv/out), tier (Premium/Mycket bra/Bra/Specialfall), value (1–5),
-  price (heltal kr INKL moms), approx, note, back (pad/mesh/saddle), tall, neck (yes/opt/no/unk), neckNote, why, h24 (bara om
-  24/7-klassad), newPrice, cond, condSrc, condNote (se Skick nedan). Behåll modellnamnet i name. Inga påhittade data – hellre
+  price (heltal kr INKL moms), approx, note, back (pad/mesh/saddle), tall, neck (yes/opt/no/unk), neckNote, why, h24, h24m
+  (se 24/7 nedan), newPrice, cond, condSrc, condNote (se Skick nedan). Behåll modellnamnet i name. Inga påhittade data – hellre
   "unk"/"Ej verifierat". Moms: Rekomo, RP, Rafz, AKIAB och Yllw visar exkl. moms → ×1,25.
 - **Skick** (sidan har ett filter på det): bedöm varje stol i `IN` och `UNV` och varje fynd som saknar `cond`, och gör om
   bedömningen om säljarens text eller fotot ändrats. Bedömda stolar behåller sitt `cond` mellan körningarna.
@@ -57,6 +61,17 @@ Utgå från `data/chairs.json` (`IN` = går att köpa, `UNV` = ej verifierat, `O
     studiobakgrund utan detaljer) säger det inget om skicket.
   - `condSrc`: `text`, `foto` eller `båda`. `condNote`: högst 60 tecken, t.ex. "nött sits och armstöd" eller "säljaren: skick A".
   - Välj inte en stol med `cond: "worn"` som toppval om det finns ett likvärdigt alternativ i bättre skick.
+- **24/7** (sidan har ett filter på det), två nivåer:
+  - `h24: true` – *24/7-klassad*: säljaren, butiken eller tillverkarens produktblad säger att just den här stolen/varianten är
+    gjord för bruk dygnet runt (24/7, 24h, kontrollrumsstol).
+  - `h24m: true` – *24/7-modell*: modellen finns i ett 24/7-utförande hos tillverkaren, men annonsen säger inte att exemplaret
+    är det. Ta reda på det per modell (tillverkarens sida eller WebSearch) och skriv vad du kom fram till i
+    `data/modeller-24-7.json` (`{ "<modell>": { "h24m": true|false, "kalla": "<url>", "kollat": "ÅÅÅÅ-MM-DD" } }`), så att samma
+    modell inte behöver kollas igen. Sätt sedan `h24m` på alla stolar av den modellen. Gissa aldrig – okänt = utelämna.
+- **Fler källor:** leta efter fler återbruksbutiker, kontorsmöbelåterförsäljare och specialister på kontrollrums- och
+  bevakningsstolar som säljer begagnat eller renoverat och skickar till Stockholm. Lägg in nya i butiksregistret (se ovan) och
+  nämn dem i rapporten. Datorns Blocket-sökning omfattar nu även "24/7 stol", "kontrollrumsstol", "bevakningsstol",
+  "operatörsstol" och "logic 400 elite".
 - `PICKS`: tre bästa köpen för Tim enligt kraven och omdömena, med frakt. Format:
   `{ "label", "name", "store" (början av butiksnamnet), "price"?, "priceNote"?, "text", "where" }` – name+store måste matcha en stol i IN.
 - `eyebrow`: behåll texten, datorn uppdaterar "kollat …". `footer`: 3–6 meningar om vad som ändrats sedan förra kollen.
@@ -74,14 +89,15 @@ Utgå från `data/chairs.json` (`IN` = går att köpa, `UNV` = ej verifierat, `O
   annons i Chrome bara om titel, pris och bild inte räcker för att bedöma den.
 
 **Tradera och CDON** kräver webbläsare (botspärr) och kollas i Claude in Chrome. Sök på bevakade modeller (RH Logic 400, Mereo,
-Extend, Kinnarps 8000/Plus/9000, Savo XO, HÅG H09, Malmstolen, Steelcase Leap, samt "24/7", "kontrollrumsstol").
+Extend, Kinnarps 8000/Plus/9000, Savo XO, HÅG H09, Malmstolen, Steelcase Leap, samt "24/7", "kontrollrumsstol",
+"bevakningsstol", "operatörsstol").
 
 Fynd från alla marknadsplatser: ta bara med annonser du bedömt, högst 10 fynd, bästa först. Lägg dem som `inbox\finds.json`:
-`{ "<url>": { name, url, store, stock, state, tier, value, price, note, back, tall, neck, neckNote, why, checked (ÅÅÅÅ-MM-DD), photoUrl, cond, condSrc, condNote, h24?, newPrice? } }`.
+`{ "<url>": { name, url, store, stock, state, tier, value, price, note, back, tall, neck, neckNote, why, checked (ÅÅÅÅ-MM-DD), photoUrl, cond, condSrc, condNote, h24?, h24m?, newPrice? } }`.
 Såld annons: samma url med `"state": "out"`. Ska bort helt: `{ "<url>": { "remove": true } }`. Blocket sköts av datorn.
 
 ## 4. Avisering
-Skicka en kort pushnotis ENDAST om något viktigt hänt: en ny stol som passar Tim eller en ny prisvärd 24/7-stol under
-10 000 kr inkl. frakt (särskilt av en gillad modell), ett tydligt prisfall (>10 %) på en sådan stol, eller att ett av de tre
+Skicka en kort pushnotis ENDAST om något viktigt hänt: en ny stol som passar Tim eller en ny prisvärd 24/7-stol (under
+14 000 kr inkl. frakt, särskilt av en gillad modell), ett tydligt prisfall (>10 %) på en sådan stol, eller att ett av de tre
 toppvalen tagit slut. 1–3 meningar med modell, butik, pris inkl. moms (och frakt) och länken https://timpan8.github.io/Ergostolar/.
 Annars: avsluta med en rad om att listan är granskad.

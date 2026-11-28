@@ -66,7 +66,8 @@
   "why": "Nackstöd syns på bilden, men det är enda bilden och den ser ut som en stockbild. Be om riktiga foton.",
   "cond": "new",
   "condSrc": "text",
-  "condNote": "säljaren: ny klädsel (stockbild)"
+  "condNote": "säljaren: ny klädsel (stockbild)",
+  "h24m": true
  },
  "f248bd4": {
   "approx": false,
@@ -89,7 +90,8 @@
   "why": "Billigaste Logic 400 med nackstöd. Svart tyg, löstagbara arm- och nackstöd syns på bilderna.",
   "cond": "good",
   "condSrc": "båda",
-  "condNote": "säljaren: varsamt använd"
+  "condNote": "säljaren: varsamt använd",
+  "h24m": true
  },
  "f2ed8796a": {
   "approx": false,
@@ -271,7 +273,8 @@
   "why": "Nyklädd och servad Logic 400 med nackstöd. Dyrare men nästan som renoverad från butik.",
   "cond": "new",
   "condSrc": "båda",
-  "condNote": "ny klädsel, armstöd och gaskolv"
+  "condNote": "ny klädsel, armstöd och gaskolv",
+  "h24m": true
  },
  "f58a95d07": {
   "back": "pad",
@@ -291,7 +294,8 @@
   "why": "Billigaste Logic 400 med nackstöd i Stockholm just nu, svart och med kontrollerade funktioner enligt annonsen.",
   "cond": "good",
   "condSrc": "text",
-  "condNote": "säljaren: varsamt använd"
+  "condNote": "säljaren: varsamt använd",
+  "h24m": true
  },
  "f5a4fe9d7": {
   "approx": false,
@@ -314,7 +318,8 @@
   "why": "Logic 400 med nackstöd och armstöd. Fråga efter ett exemplar utan sliten dyna.",
   "cond": "good",
   "condSrc": "text",
-  "condNote": "vissa ex. har sliten sitskant"
+  "condNote": "vissa ex. har sliten sitskant",
+  "h24m": true
  },
  "f5b3f38f0": {
   "back": "pad",
@@ -375,7 +380,8 @@
   "url": "https://www.blocket.se/recommerce/forsale/item/27592465",
   "value": 5,
   "why": "Logic 4 med nackstöd och luftsvank till mycket lågt pris. Klädseln är blåmönstrad.",
-  "cond": "unk"
+  "cond": "unk",
+  "h24m": true
  },
  "f6f8b392b": {
   "approx": false,
@@ -398,7 +404,8 @@
   "why": "Varianten med nackstöd är slutsåld. Utan nackstöd finns 11 st; med Rekomos nackstöd ca 7 170 kr.",
   "cond": "good",
   "condSrc": "text",
-  "condNote": "Rafz: fint skick"
+  "condNote": "Rafz: fint skick",
+  "h24m": true
  },
  "f75870a3": {
   "back": "pad",
@@ -418,7 +425,8 @@
   "why": "Logic 400 Komfort med arm- och nackstöd, upplagd för en vecka sedan.",
   "cond": "good",
   "condSrc": "text",
-  "condNote": "säljaren: varsamt använd"
+  "condNote": "säljaren: varsamt använd",
+  "h24m": true
  },
  "f77fde1ce": {
   "approx": false,
@@ -464,7 +472,8 @@
   "why": "Skinn med nackstöd och Tvedt-kudde. Skinn blir varmt under långa dagar.",
   "cond": "good",
   "condSrc": "båda",
-  "condNote": "säljaren: mycket bra skick"
+  "condNote": "säljaren: mycket bra skick",
+  "h24m": true
  },
  "f7fd5192a": {
   "approx": false,

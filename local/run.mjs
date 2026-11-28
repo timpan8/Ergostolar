@@ -17,6 +17,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import os from 'node:os';
 import { createHash } from 'node:crypto';
+import { existsSync } from 'node:fs';
 import { getText, getBuffer, ldObjects, Blocked, Gone, sharedBlocket } from './fetch.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -105,9 +106,16 @@ function readOffer(html) {
   const count = m ? +m[1] : null;
   return { price: price > 0 ? price : null, vat, cur, avail, count };
 }
-// Produktbilden: ld+json Product.image (sträng, lista eller ImageObject), annars og:image
+// Produktbilden: ld+json Product.image (sträng, lista eller ImageObject), annars og:image.
+// Product kan ligga inbäddad, t.ex. som mainEntity i en WebPage (Lomax), så leta på alla nivåer.
+function findProduct(o, depth = 0) {
+  if (!o || typeof o !== 'object' || depth > 6) return null;
+  if (!Array.isArray(o) && /Product/.test([].concat(o['@type'] || []).join(' '))) return o;
+  for (const v of Array.isArray(o) ? o : Object.values(o)) { const p = findProduct(v, depth + 1); if (p) return p; }
+  return null;
+}
 function pagePhoto(html, base) {
-  const prod = ldObjects(html).find(j => /Product/.test([].concat(j['@type']).join(' ')));
+  const prod = findProduct(ldObjects(html));
   let src = [].concat(prod?.image || []).map(x => typeof x === 'string' ? x : x?.url || x?.contentUrl).find(Boolean);
   if (!src) src = (html.match(/<meta[^>]+property=["']og:image(?::secure_url)?["'][^>]*content=["']([^"']+)/i) || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]*property=["']og:image["']/i) || [])[1];
   if (!src) return null;
@@ -197,16 +205,39 @@ if (process.env.ERGO_SKIP_CHECK !== '1') {
     if (to !== 'OUT' && res.photoSrc && !hasPhoto.has(cleanUrl(it.url))) needPhoto.push([it, res.photoSrc]);
   }));
   for (const [it, from, to] of moves) { ch[from] = ch[from].filter(x => x !== it); ch[to].unshift(it); }
-  // Foton till stolar i Går att köpa / Ej verifierade som saknar ett (slutsålda hoppas över)
-  if (needPhoto.length) {
+  // Foton till stolar i Går att köpa / Ej verifierade som saknar ett (slutsålda hoppas över).
+  // Gick sidan inte att läsa (t.ex. CDON med botspärr): ta fyndets foto för samma annons, annars stolens photoUrl.
+  let finds = {}; try { finds = JSON.parse(await readFile(FINDS, 'utf8')); } catch {}
+  const imgOk = id => typeof id === 'string' && /^[A-Za-z0-9_-]{16,64}$/.test(id) && existsSync(path.join(IMG_DIR, id + '.jpg'));
+  const queued = new Set(needPhoto.map(([it]) => it));
+  let reused = 0;
+  for (const it of [...ch.IN, ...ch.UNV]) {
+    const u = cleanUrl(it.url);
+    if (hasPhoto.has(u) || queued.has(it)) continue;
+    const f = Object.values(finds).find(x => cleanUrl(x.url) === u && imgOk(x.img));
+    if (f) { photos[u] = f.img; reused++; }
+    else if (/^https:\/\//.test(it.photoUrl || '')) needPhoto.push([it, it.photoUrl]);
+  }
+  // Fynd från marknadsplatser som bara har en länk till fotot: ladda ned det. Misslyckas det (utgången länk) görs
+  // ett nytt försök först efter en vecka.
+  const needFind = Object.values(finds).filter(f => f.state !== 'out' && !imgOk(f.img) && !f.thumb && /^https:\/\//.test(f.photoUrl || '') &&
+    !(f.imgTried && now - new Date(f.imgTried) < 7 * 864e5));
+  if (needPhoto.length || needFind.length || reused) {
     await mkdir(IMG_DIR, { recursive: true });
     report.foton = [];
-    await Promise.all(needPhoto.map(async ([it, src]) => {
-      try { photos[cleanUrl(it.url)] = await savePhoto(it, src); report.foton.push(it.name); }
-      catch (e) { report.granska.push(`${it.name}: fotot gick inte att hämta – ${e.message}`); }
-    }));
+    await Promise.all([
+      ...needPhoto.map(async ([it, src]) => {
+        try { photos[cleanUrl(it.url)] = await savePhoto(it, src); report.foton.push(it.name); }
+        catch (e) { report.granska.push(`${it.name}: fotot gick inte att hämta – ${e.message}`); }
+      }),
+      ...needFind.map(async f => {
+        try { f.img = await savePhoto(f, f.photoUrl); delete f.imgTried; report.foton.push(`${f.name} (fynd)`); }
+        catch (e) { f.imgTried = now.toISOString(); report.granska.push(`${f.name} (fynd): fotot gick inte att hämta – ${e.message}`); }
+      })
+    ]);
     await writeFile(PHOTOS, JSON.stringify(photos, null, 1) + '\n');
-    log(`Foton: ${report.foton.length} av ${needPhoto.length} nya hämtade`);
+    if (needFind.length) await writeFile(FINDS, JSON.stringify(finds, null, 1) + '\n');
+    log(`Foton: ${report.foton.length} av ${needPhoto.length + needFind.length} nya hämtade, ${reused} från fynden`);
   }
   ch.eyebrow = String(ch.eyebrow || '').replace(/kollat[^·]*$/, `kollat ${svDate}, ca ${svTime}`);
   ch.autoChecked = now.toISOString();
@@ -215,7 +246,10 @@ if (process.env.ERGO_SKIP_CHECK !== '1') {
 }
 
 // ---------- 3. Kandidater ----------
-const MODELS = /logic\s*(400|4\b|220)|mereo|extend|kinnarps|plus\s*8|\b8000\b|savo|\bxo\b|h0[59]\b|capisco|malmstol|leap|gesture|24\/7|kontrollrum/i;
+// Bevakade modeller. Utökat med fler heldags- och 24/7-stolar (kontrollrum, bevakning, operatörsplatser).
+const MODELS = /logic\s*(400|4\b|220)|mereo|extend|kinnarps|plus\s*[68]|\b[689]000\b|capella|savo|\bxo\b|maxikon|h0[59]\b|h09|capisco|malmstol|leap|gesture|aeron|embody|stolcomfort|\bkab\b|rh\s*focus|secur\s*24|24\/7|24\s*h\b|dygnet runt|kontrollrum|bevakningsstol|operatörsstol|elite/i;
+// 24/7-stolar får kosta upp till ca 14 000 kr (visas i en egen grupp över budget på sidan)
+const H24 = /24\/7|24\s*h\b|dygnet runt|kontrollrum|bevakning|operatör|elite|stolcomfort|\bkab\b|rh\s*focus|secur\s*24/i;
 const LISTS = [
   'https://www.rekomo.se/brands/rh/', 'https://www.rekomo.se/brands/kinnarps/', 'https://www.rekomo.se/brands/savo/',
   'https://www.rekomo.se/brands/hag/', 'https://www.rekomo.se/brands/steelcase/',
@@ -223,7 +257,8 @@ const LISTS = [
   'https://rp.se/shop/stolar/kontorsstolar-stolar/',
   'https://relovie.com/k/hem-inredning/mobler/kontorsstolar'
 ];
-const BLOCKET_Q = ['logic 400', 'kinnarps 8000', 'kinnarps plus', 'savo xo', 'rh mereo', 'rh extend', 'håg h09', 'malmstolen', 'steelcase leap', 'kontorsstol nackstöd'];
+const BLOCKET_Q = ['logic 400', 'kinnarps 8000', 'kinnarps plus', 'kinnarps 9000', 'savo xo', 'rh mereo', 'rh extend', 'håg h09', 'malmstolen', 'steelcase leap', 'kontorsstol nackstöd',
+  '24/7 stol', 'kontrollrumsstol', 'bevakningsstol', 'operatörsstol', 'logic 400 elite', 'rh focus', 'secur24'];
 if (sharedBlocket) await sharedBlocket.needs('ergostolar', BLOCKET_Q); // anmäl sökorden till det gemensamma Blocket-jobbet
 const known = new Set([...ch.IN, ...ch.UNV, ...ch.OUT].map(x => cleanUrl(x.url)));
 try { Object.values(JSON.parse(await readFile(FINDS, 'utf8'))).forEach(f => known.add(cleanUrl(f.url))); } catch {}
@@ -257,7 +292,7 @@ await Promise.all([
       }
       for (const a of ads) {
         const u = cleanUrl(a.url);
-        if (!u || known.has(u) || cands.has(u) || !MODELS.test(a.name || '') || !(a.price >= 500 && a.price < 10000)) continue;
+        if (!u || known.has(u) || cands.has(u) || !MODELS.test(a.name || '') || !(a.price >= 500 && a.price < (H24.test(a.name || '') ? 14000 : 10000))) continue;
         cands.set(u, { name: a.name, url: u, källa: 'blocket.se', pris: a.price, bild: a.image || null, sökord: q });
       }
     } catch (e) { report.olasta.push(`Blocket "${q}": ${e.message}`); }

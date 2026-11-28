@@ -36,7 +36,8 @@
    "why": "Nu 3 119 kr även på produktsidan (förut 6 244). Logic 400 (Logic 4) med luftsvank och nackstöd, 1 styck enligt märkessidan. Produktsidan saknar köpknapp, så ring BBS och beställ.",
    "cond": "good",
    "condSrc": "foto",
-   "condNote": "inga synliga skador"
+   "condNote": "inga synliga skador",
+   "h24m": true
   },
   {
    "name": "RH Logic 400 med nackstöd, mörkgrå",
@@ -54,7 +55,8 @@
    "why": "Sidan gick att läsa i dag: justerbart nackstöd ingår och tre finns i lager. Billigaste Logic 400 med nackstöd, men fråga om skick, armstöd och garanti.",
    "cond": "good",
    "condSrc": "foto",
-   "condNote": "inga synliga skador"
+   "condNote": "inga synliga skador",
+   "h24m": true
   },
   {
    "name": "Herman Miller Aeron Classic",
@@ -200,7 +202,8 @@
    "why": "Med nytt nackstöd från Rekomo blir den cirka 7 300 kr, alltså dyrare än Logic 400 med nackstöd ovan.",
    "cond": "good",
    "condSrc": "text",
-   "condNote": "Rekomo 4/5"
+   "condNote": "Rekomo 4/5",
+   "h24m": true
   },
   {
    "name": "Herman Miller Sayl",
@@ -475,7 +478,8 @@
    "why": "Ny svankpump och nackstöd i läder enligt sidan i dag. Med armstöd blir det cirka 9 490 kr före frakt, så fråga Cirkulärfabriken om frakt till Stockholm.",
    "cond": "good",
    "condSrc": "text",
-   "condNote": "skick B, minimalt slitage"
+   "condNote": "skick B, minimalt slitage",
+   "h24m": true
   },
   {
    "name": "Herman Miller Mirra Triflex",
@@ -604,7 +608,8 @@
    "why": "Ny i listan. Billig Logic 4 med hög rygg och nackstöd som renoveras och får ny klädsel. Fraktpris och leveranstid anges inte, så fråga Yllw (010-209 09 03).",
    "cond": "good",
    "condSrc": "text",
-   "condNote": "renoveras, ny klädsel, 4/5 efter"
+   "condNote": "renoveras, ny klädsel, 4/5 efter",
+   "h24m": true
   },
   {
    "name": "Savo S3 med nackstöd, svart tyg",
@@ -697,7 +702,8 @@
    "why": "Rafz visar inte pris eller lager för varianten i dag (förut 11 i lager). Beskrivningen nämner nu ett nackstöd, men inte om det ingår, så ring och bekräfta. Med Rekomos Logic-nackstöd blir det cirka 7 170 kr plus frakt.",
    "cond": "good",
    "condSrc": "text",
-   "condNote": "Rafz: fint skick"
+   "condNote": "Rafz: fint skick",
+   "h24m": true
   },
   {
    "name": "Kinnarps Plus 6/Plus 8, hög rygg, omklädd",
@@ -941,7 +947,8 @@
    "back": "pad",
    "tall": true,
    "neck": "no",
-   "why": "I lager igen sedan i går. Hög stoppad Logic 400 med nya armstöd, men Rekomos lista över vad som ingår tar inte upp nackstöd, och med ett köpt nackstöd hamnar den över 10 000 kr."
+   "why": "I lager igen sedan i går. Hög stoppad Logic 400 med nya armstöd, men Rekomos lista över vad som ingår tar inte upp nackstöd, och med ett köpt nackstöd hamnar den över 10 000 kr.",
+   "h24m": true
   },
   {
    "name": "HÅG Capisco 8106",
@@ -972,7 +979,8 @@
    "tall": true,
    "neck": "opt",
    "neckNote": "+1 130 kr om det saknas",
-   "why": "I lager igen sedan i går. Beskrivningen säger att nackstöd sitter på, men Rekomos lista över vad som ingår tar bara upp stol och armstöd. Med köpt Logic-nackstöd blir det cirka 9 260 kr med fri frakt."
+   "why": "I lager igen sedan i går. Beskrivningen säger att nackstöd sitter på, men Rekomos lista över vad som ingår tar bara upp stol och armstöd. Med köpt Logic-nackstöd blir det cirka 9 260 kr med fri frakt.",
+   "h24m": true
   },
   {
    "name": "RH Extend med armstöd",
@@ -1003,7 +1011,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan. Höjdjusterbart nackstöd ingår, men med frakt kan den hamna över 10 000 kr."
+   "why": "Ny i listan. Höjdjusterbart nackstöd ingår, men med frakt kan den hamna över 10 000 kr.",
+   "h24m": true
   },
   {
    "name": "Kinnarps 9000 med nackstöd i läder, svart tyg",
@@ -1053,7 +1062,8 @@
    "tall": true,
    "neck": "unk",
    "why": "Logic 400 med hög rygg, men nackstöd, klädsel och frakt anges inte. Nackstöd för 1 130 kr skulle ta den över budget.",
-   "missing": "2026-11-22T18:47:47.169Z"
+   "missing": "2026-11-22T18:47:47.169Z",
+   "h24m": true
   },
   {
    "name": "RH Logic 220 med nackstöd, hög rygg",
@@ -1087,7 +1097,8 @@
    "tall": true,
    "neck": "yes",
    "why": "Ny i listan. Renoverad Logic 400 med hög rygg och nackstöd, men med frakt kan den gå över 10 000 kr, så bekräfta slutpris med Yllw (010-209 09 03).",
-   "missing": "2026-11-22T18:47:47.169Z"
+   "missing": "2026-11-22T18:47:47.169Z",
+   "h24m": true
   },
   {
    "name": "RH Logic 400, hög rygg, nackstöd (brun/grå)",
@@ -1104,7 +1115,8 @@
    "tall": true,
    "neck": "yes",
    "why": "Hög stoppad Logic 400 med justerbart nackstöd, men priset ligger nära taket. Annat artikelnummer än den svart/gröna ovan, så troligen en egen stol.",
-   "missing": "2026-11-22T18:47:47.169Z"
+   "missing": "2026-11-22T18:47:47.169Z",
+   "h24m": true
   },
   {
    "name": "Kinnarps Plus 8 Soft med nackstöd, omklädd svart",
@@ -1137,7 +1149,8 @@
    "tall": true,
    "neck": "yes",
    "why": "Ny i listan. Justerbart nackstöd och armstöd enligt beskrivningen, men klädsel och frakt anges inte. Ryms i budget bara om frakten är under 250 kr och om 11 154 kr inte är slutpriset.",
-   "missing": "2026-11-22T18:47:47.169Z"
+   "missing": "2026-11-22T18:47:47.169Z",
+   "h24m": true
   },
   {
    "name": "Kinnarps Plus 8000 med nackstöd, svart tyg, 5 800 exkl.",
@@ -1234,7 +1247,8 @@
    "tall": true,
    "neck": "yes",
    "why": "Ny i listan. Arm- och nackstöd ingår och 21 finns tillgängliga. Billigaste Logic 400 med nackstöd, men Yllw levererar med egna bilar till Stockholm, men fraktpris, skick och garanti anges inte (010-209 09 03).",
-   "missing": "2026-11-22T18:47:47.169Z"
+   "missing": "2026-11-22T18:47:47.169Z",
+   "h24m": true
   },
   {
    "name": "RH Extend 120 med nackstöd, grått tyg",
@@ -1318,7 +1332,8 @@
    "tall": true,
    "neck": "unk",
    "why": "Ny i listan. Renoverad Logic 400 med hög stoppad rygg, men nackstöd nämns inte och med nackstöd och frakt hamnar den nära eller över budget.",
-   "missing": "2026-11-22T18:47:47.169Z"
+   "missing": "2026-11-22T18:47:47.169Z",
+   "h24m": true
   },
   {
    "name": "RH Mereo 220 med nackstöd, svart tyg",
@@ -1428,7 +1443,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan, men ej i lager i någon butik. Logic 400 med nackstöd i läder, bevaka om den kommer in."
+   "why": "Ny i listan, men ej i lager i någon butik. Logic 400 med nackstöd i läder, bevaka om den kommer in.",
+   "h24m": true
   },
   {
    "name": "RH Logic 400 med nackstöd, svart tyg",
@@ -1443,7 +1459,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Ny i listan, men ej i lager. Logic 400 i tyg med Logic-nackstöd enligt Rekomos lista, bevaka."
+   "why": "Ny i listan, men ej i lager. Logic 400 i tyg med Logic-nackstöd enligt Rekomos lista, bevaka.",
+   "h24m": true
   },
   {
    "name": "RH Logic 400, svart",
@@ -1459,7 +1476,8 @@
    "tall": true,
    "neck": "opt",
    "neckNote": "+1 130 kr hos Rekomo",
-   "why": "Slut sedan i morse 19 nov (0 i lager hos RP). Hög stoppad Logic 400 med luftsvank, men utan nackstöd. Med nackstöd blir den cirka 9 250 kr plus frakt, dyrare än Logic 400 med nackstöd hos Rekomo."
+   "why": "Slut sedan i morse 19 nov (0 i lager hos RP). Hög stoppad Logic 400 med luftsvank, men utan nackstöd. Med nackstöd blir den cirka 9 250 kr plus frakt, dyrare än Logic 400 med nackstöd hos Rekomo.",
+   "h24m": true
   },
   {
    "name": "RH Mereo 300 med nackstöd",
@@ -1550,7 +1568,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Slut sedan i förmiddags i alla Rekomos butiker. Var förra toppvalet, bevaka om den kommer tillbaka."
+   "why": "Slut sedan i förmiddags i alla Rekomos butiker. Var förra toppvalet, bevaka om den kommer tillbaka.",
+   "h24m": true
   },
   {
    "name": "Kinnarps 6000/8000 hög, omklädd",
@@ -1629,7 +1648,8 @@
    "tall": true,
    "neck": "yes",
    "why": "Billig renoverad Logic 400 med nackstöd och luftsvank. Nu 0 i lager hos Yllw (var reserverad förut).",
-   "missing": "2026-11-27T06:45:01.961Z"
+   "missing": "2026-11-27T06:45:01.961Z",
+   "h24m": true
   },
   {
    "name": "RH Mereo 220, grå",
@@ -1659,7 +1679,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": "Nackstöd och armstöd ingår enligt produktlistan. Visas som ej i lager och priset har höjts."
+   "why": "Nackstöd och armstöd ingår enligt produktlistan. Visas som ej i lager och priset har höjts.",
+   "h24m": true
   },
   {
    "name": "Kinnarps Plus, omklädd, nackstöd",
@@ -1764,7 +1785,8 @@
    "back": "pad",
    "tall": true,
    "neck": "no",
-   "why": "Listan över vad som ingår tar bara upp stol och armstöd, trots att specifikationen nämner nackstöd."
+   "why": "Listan över vad som ingår tar bara upp stol och armstöd, trots att specifikationen nämner nackstöd.",
+   "h24m": true
   },
   {
    "name": "Kinnarps 6000/8000, låg rygg, nackstöd",
@@ -1809,7 +1831,8 @@
    "back": "pad",
    "tall": true,
    "neck": "yes",
-   "why": ""
+   "why": "",
+   "h24m": true
   },
   {
    "name": "Kinnarps 8000 Plus",

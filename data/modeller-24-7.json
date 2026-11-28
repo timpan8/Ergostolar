@@ -1,0 +1,7 @@
+{
+ "RH Logic 400": { "h24m": true, "not": "24/7-versionen heter RH Logic 400 Elite (tjockare stoppning)", "kalla": "https://info.flokk.com/global/rh-24-7/rh-logic-elite", "kollat": "2026-11-28" },
+ "RH Focus": { "h24m": true, "not": "ingår i RH:s 24/7-serie", "kalla": "https://info.flokk.com/global/rh-24-7", "kollat": "2026-11-28" },
+ "RH Secur24": { "h24m": true, "not": "ingår i RH:s 24/7-serie", "kalla": "https://info.flokk.com/global/rh-24-7", "kollat": "2026-11-28" },
+ "RH Extend": { "h24m": false, "not": "ingår inte i RH:s 24/7-serie (Focus, Secur24, Logic Elite)", "kalla": "https://info.flokk.com/global/rh-24-7", "kollat": "2026-11-28" },
+ "RH Mereo": { "h24m": false, "not": "ingår inte i RH:s 24/7-serie (Focus, Secur24, Logic Elite)", "kalla": "https://info.flokk.com/global/rh-24-7", "kollat": "2026-11-28" }
+}
